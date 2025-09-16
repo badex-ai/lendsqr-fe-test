@@ -1,0 +1,39 @@
+@use '../../styles/variables' as var;
+
+
+.sidebar{
+    width: 28.3rem;
+    height: auto;
+    position: fixed;
+    background-color: var.$primary-white;
+
+    &_title{
+        font-size: var.$font-md;
+        color: var.$primary-blue;
+
+    }
+
+    &_tenet{
+        margin-top: 3.9rem;
+        margin-left: 3rem;
+        font-size: var.$font-md;
+        color: var.$primary-blue;
+        width: 20.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5.2rem;
+    }
+
+    &_categories{
+        font-size: var.$font-sm;
+        margin-left: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    // &_title{}
+
+
+
+   
+}

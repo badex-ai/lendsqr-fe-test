@@ -1,0 +1,49 @@
+@use '../../styles/variables' as var;
+
+.header{
+    background-color: #fff;
+    height: 10rem;
+    width: calc(100vw - 6rem );
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+    align-items: center;
+
+    &_userInfo{
+     width: 26rem;
+     height: 4.8rem;
+     display: flex;
+     font-size: var.$font-md;
+     align-items: center;
+    
+
+      &_image{
+        height: 4.8rem;
+        width: 4.8rem;
+        margin-right: 1rem;
+      }
+
+      &_notif{
+        margin-left: 4.8rem ;
+        margin-right: 3rem ;
+      
+      }
+
+      &_expand{
+        width: 8.2rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+
+    }
+
+    &_logo{
+        width: 14.8rem;
+        height: 3rem;
+        
+    }
+
+   
+
+}

@@ -1,0 +1,44 @@
+@use '../../styles/variables' as var;
+
+
+.sidebarLink{
+    font-size: var.$font-md;
+    color: var.$primary-grey;
+    height: calc(4rem - 2rem);
+    width: calc(28.3rem - 5.4rem);
+    text-decoration: none;
+    padding:  1rem  2.7rem;
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+
+    
+    
+    
+
+    &_icon{
+        margin-right: 1rem;
+       
+    }
+    
+    
+
+    &.sidebarLink_active{
+        background-color: var.$primary-olive;
+        color: var.$primary-blue;
+
+         &::before {
+        content: '';
+        height: 4rem;
+        width: 0.3rem;
+        // background-color: var.$primary-olive;
+        background-color: red;
+
+        position: absolute;
+        left:0;
+        top: 0;
+    }
+    }
+
+
+}
