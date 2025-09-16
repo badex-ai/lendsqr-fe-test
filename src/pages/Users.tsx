@@ -1,5 +1,5 @@
 import React from 'react'
-import Orgfilter from '../components/molecules/orgfilter'
+import Orgfilter from '../components/molecules/Orgfilter'
 
 type Props = {}
 

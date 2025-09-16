@@ -1,0 +1,26 @@
+@import './styles/index.scss';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Work Sans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 16px (standard)
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 8px; // responsive scaling for smaller screens
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 6px; // even smaller
+  }
+}
+
