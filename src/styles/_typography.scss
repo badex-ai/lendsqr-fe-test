@@ -1,7 +1,9 @@
+@use './variables' as var;
+$font-primary: 'Work Sans', -apple-system, BlinkMacSystemFont;
+$font-system: -apple-system, BlinkMacSystemFont;
 
-$font-primary: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-$font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
 
 h1{
-    font-size: 1.4rem;
+    font-size: var.$font-Lg ;
 }

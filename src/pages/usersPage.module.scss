@@ -1,0 +1,28 @@
+@use '../styles/variables' as var;
+
+.usersPage{
+    padding:  6rem 6rem;
+
+    &_title{
+        margin-bottom: 4rem;
+    }
+
+
+      &_cardsCont{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+      &_table{
+        width: 100%;
+        
+    }
+
+      &_pageNav{
+         width: 100%;
+    }
+
+
+}

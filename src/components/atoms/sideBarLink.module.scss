@@ -20,9 +20,12 @@
         margin-right: 1rem;
        
     }
-    
-    
 
+    &:hover{
+     background-color: var.$primary-olive;
+
+    }
+    
     &.sidebarLink_active{
         background-color: var.$primary-olive;
         color: var.$primary-blue;

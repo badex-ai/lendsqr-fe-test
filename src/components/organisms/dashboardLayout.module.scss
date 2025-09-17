@@ -1,0 +1,19 @@
+.dashboardLayout{
+   
+
+    &_body{
+        display: flex;
+        
+    }
+
+    &_nav{
+       
+        width: 28.3rem;
+        height: auto;
+    }
+
+    &_content{
+        width: calc(100% - 28.3rem);
+    }
+    
+}

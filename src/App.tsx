@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import DashboardLayout from './components/organisms/DashboardLayout';
 // import Dashboard from './pages/Dashboard';
-import Users from './pages/Users';
+import UsersPage from './pages/UsersPage';
 import UserDetails from './pages/UserDetails';
 import { UserProvider } from './context/userContext';
 
@@ -17,12 +17,10 @@ function App() {
         {/* Public routes (e.g. login) that don't use the main layout */}
         <Route path="/login" element={<Login />} />
 
-        {/* Routes that use MainLayout */}
-        <Route element={<DashboardLayout/>}>
-           <Route path="/dashboard/users" element={<Users />} />
-          <Route path="/dashboard/users/details" element={<UserDetails />} />
-          
-        </Route>
+       <Route path="/dashboard" element={<DashboardLayout/>}>
+        <Route path="users" element={<UsersPage/>} />
+        <Route path="users/details" element={<UserDetails />} />
+       </Route>
 
         {/* Fallback / catch-all */}
         {/* <Route path="*" element={<NotFoundPage />} /> */}

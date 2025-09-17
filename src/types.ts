@@ -17,4 +17,4 @@ interface NavLinkType  {
   icon: SvgIconComponent;
 }
 type NavLinkArray  = NavLinkType[]
-export type {User, UserContextType, NavLinkType,NavLinkArray}
+export type {User, UserContextType, NavLinkType,NavLinkArray, SvgIconComponent}

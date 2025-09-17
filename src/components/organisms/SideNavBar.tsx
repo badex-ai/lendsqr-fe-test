@@ -55,7 +55,8 @@ const Sidebar = () => {
     return <SideBarLink  name ={obj.name} link={obj.link} icon={obj.icon} />
    })
   return (
-      <div className={styles.sidebar}>
+    
+      <nav className={styles.sidebar}>
 
       <div className={styles.sidebar_tenet  } >
         <BriefCase2Icon/>
@@ -94,7 +95,8 @@ const Sidebar = () => {
       </div>
      
 
-    </div>
+    </nav>
+    
   )
 }
 

@@ -2,15 +2,25 @@ import React from 'react'
 import { Outlet } from "react-router-dom";
 import Sidebar from './SideNavBar';
 import Header from '../molecules/Header';
+import styles from './dashboardLayout.module.scss'
 
 type Props = {}
 
 const DashboardLayout = (props: Props) => {
   return (
-    <div> 
+    <div className={styles.dashboardLayout}> 
       <Header/>
-      <Sidebar/>
-      <Outlet/>
+      <div className={styles.dashboardLayout_body}>
+        <div className={styles.dashboardLayout_nav}>
+          <Sidebar/>
+        </div>
+        <div className={styles.dashboardLayout_content}>
+          <Outlet/>
+        </div>
+      </div>
+    
+      
+      
     </div>
   )
 }

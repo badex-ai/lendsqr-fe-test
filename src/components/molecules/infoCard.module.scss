@@ -1,0 +1,25 @@
+@use '../../styles/variables' as var;
+
+.infocard{
+    width: calc(24rem - 6rem);
+    padding:  2rem 3rem;
+    height: calc(16rem - 4rem);
+    border: 1px solid var.$primary-blue-light;
+    box-shadow: var.$box-shadow1;
+    border-radius: 0.4rem;
+    background-color: var.$primary-white;
+   
+    &_title{
+        margin-top: 0.7rem;
+        margin-bottom: 1.2rem;
+        font-size: var.$font-sm;
+        color: var.$primary-grey;
+        text-transform: uppercase;
+    }
+
+    &_value{
+        font-size: var.$font-Lg;
+        color: var.$primary-blue
+    }
+   
+}

@@ -15,8 +15,8 @@ import { ReactComponent as DropDownIcon } from "./dropDownIcon.svg";
 import { ReactComponent as FilterIcon } from "./filterIcon.svg";
 import { ReactComponent as GalaxyIcon } from "./galaxyIcon.svg";
 import { ReactComponent as HandshakeIcon } from "./handshakeIcon.svg";
-import { ReactComponent as Icon1 } from "./icon-1.svg";
-import { ReactComponent as Icon2 } from "./icon-2.svg";
+import { ReactComponent as CoinIcon} from "./coin.svg";
+import { ReactComponent as CoinSheet } from "./coinSheet.svg";
 import { ReactComponent as Logo } from "./Logo.svg";
 import   NextIcon  from "./NextIcon";
 import { ReactComponent as NotifIcon } from "./notifIcon.svg";
@@ -54,8 +54,8 @@ export {
   FilterIcon,
   GalaxyIcon,
   HandshakeIcon,
-  Icon1,
-  Icon2,
+  CoinIcon,
+  CoinSheet,
   Logo,
   NextIcon,
   NotifIcon,
