@@ -1,11 +1,19 @@
 //COLORS
 $primary-olive: #39CDCC ;
+$primary-olive-light: #f3fcfc; 
 $primary-green: #39CD62 ;
+$primary-green-light: #39CD62 ;
 $primary-red: #E4033B ;
+$primary-red-light: #E4033B ;
 $primary-yellow: #E9B200 ;
+$primary-yellow-light: #E9B2001A;
 $primary-grey: #545F7D ;
+$primary-grey-light: #545F7D ;
 $primary-blue: #213F7D;
 $primary-blue-light: #213F7D0F;
+$primary-blue-border:#213F7D1A;
+$transparent: transparent;
+
 $primary-white: #fff;
 $box-shadow2: 0px 5px 20px 0px #0000000A;
 $box-shadow1: 3px 5px 20px 0px #0000000A;
@@ -21,3 +29,8 @@ $font-sm: 1.4rem;
 $font-md: 1.6rem;
 // $font-bg: ;
 $font-Lg:2.4rem;
+
+
+$font-normal: 400;
+$font-medium: 500;
+$font-semi-bold: 600;

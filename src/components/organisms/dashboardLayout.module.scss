@@ -1,19 +1,32 @@
 .dashboardLayout{
    
+    width: calc(100vw - 1.6rem)   ;
 
     &_body{
+        position: relative;
         display: flex;
-        
-    }
-
-    &_nav{
        
-        width: 28.3rem;
-        height: auto;
+        
+
+        &_nav{
+       
+        width: 29.9rem;
+        height: 100vh;
+        overflow-y: scroll;
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        }
+
+        &_page{
+            width: calc(100% - 41.9rem);
+            padding:  6rem 6rem;
+            display: flex;
+            justify-content: center
+        }
+
     }
 
-    &_content{
-        width: calc(100% - 28.3rem);
-    }
+  
     
 }

@@ -16,6 +16,8 @@
         align-items: center;
         justify-content: center;
         border-radius:o 0.8rem 0.8rem 0;
+        cursor: pointer;
+        outline: none;
 
     }
 
@@ -26,6 +28,14 @@
         font-size: var.$font-sm ;
         color: var.$primary-grey;
         padding: 1.2rem  2rem ;
+        border: 1px solid var.$transparent;
+        
+        &:focus {
+        
+        border: 1px solid var.$transparent;
+      
+        }
+
     }
     
 }

@@ -30,7 +30,7 @@ const Header = (props: Props) => {
     <SearchBar/>
     </div>
     <div className={styles.header_userInfo}>
-      <Link to='#'>Docs</Link>
+      <Link className={styles.header_userInfo_link} to='#'>Docs</Link>
       <NotifIcon className={styles.header_userInfo_notif} />
 
       <div className={styles.header_userInfo_image}>

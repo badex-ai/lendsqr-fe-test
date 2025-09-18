@@ -1,3 +1,63 @@
+@use '../../styles/variables' as var;
+
 .dashboardTable{
-    
+
+    font-size: var.$font-sm;
+    color: var.$primary-grey;
+  
+    table {
+      width: 97.7rem;
+      border-collapse: collapse; 
+    }
+
+    // &_ellipses{
+    //     // display
+    // }
+            
+    thead {
+      font-size: var.$font-xs;
+      font-weight: var.$font-semi-bold;
+      text-transform: uppercase;
+      
+      th {
+        text-align: left;
+        padding: 0.7rem 0;
+        padding-right: 3.5rem;
+        white-space: nowrap;
+
+        span {
+          display: inline-flex;
+          align-items: center;
+          vertical-align: middle;
+          margin-left: 1em; 
+        }
+         &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+
+   
+    tbody {
+      tr {
+        
+      }
+      
+      td {
+        padding: 2.2rem 0rem; 
+        padding-right: 3.5rem;
+        border-bottom: 1px solid var.$primary-blue-border;
+        margin: 0;
+        
+
+         &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
 }
+

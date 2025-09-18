@@ -3,23 +3,26 @@
 .header{
     background-color: #fff;
     height: 10rem;
-    width: calc(100vw - 6rem );
+    width: calc(100vw - 7.6rem );
     display: flex;
     justify-content: space-between;
     padding: 0 3rem;
     align-items: center;
     box-shadow: var.$box-shadow3;
-    // position: absolute;
     z-index: 1;
 
+ 
 
     &_userInfo{
      width: 26rem;
      height: 4.8rem;
      display: flex;
-     font-size: var.$font-md;
      align-items: center;
-    
+
+   
+      &_link{
+        font-size: var.$font-md;
+      }
 
       &_image{
         height: 4.8rem;
@@ -30,6 +33,7 @@
       &_notif{
         margin-left: 4.8rem ;
         margin-right: 3rem ;
+        
       
       }
 
@@ -37,6 +41,7 @@
         width: 8.2rem;
         display: flex;
         justify-content: space-between;
+        font-size: var.$font-md;
       }
 
 

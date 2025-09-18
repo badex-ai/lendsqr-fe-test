@@ -1,22 +1,31 @@
 @use '../styles/variables' as var;
 
 .usersPage{
-    padding:  6rem 6rem;
+   
+    // margin: 0 auto;
+   
+    
 
     &_title{
         margin-bottom: 4rem;
+        text-align: left
     }
 
 
       &_cardsCont{
         display: flex;
-        width: 100%;
+        width: 103.7rem;
         justify-content: space-between;
+        margin-bottom: 4rem;
     }
 
+        
+   
 
       &_table{
-        width: 100%;
+        width: calc(103.7rem - 6rem);
+        padding: 3rem 3rem;
+        background-color: var.$primary-white;
         
     }
 

@@ -11,10 +11,10 @@ const DashboardLayout = (props: Props) => {
     <div className={styles.dashboardLayout}> 
       <Header/>
       <div className={styles.dashboardLayout_body}>
-        <div className={styles.dashboardLayout_nav}>
+        <div className={styles.dashboardLayout_body_nav}>
           <Sidebar/>
         </div>
-        <div className={styles.dashboardLayout_content}>
+        <div className={styles.dashboardLayout_body_page}>
           <Outlet/>
         </div>
       </div>
