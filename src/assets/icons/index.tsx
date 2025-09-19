@@ -36,6 +36,10 @@ import { ReactComponent as UserTimesIcon } from "./usertimesIcon.svg";
 import { ReactComponent as VertMoreIcon } from "./vertMoreIcon.svg";
 import { ReactComponent as SackIcon } from "./sack.svg";
 import { ReactComponent as FeesIcon } from "./feeandpricesIcon.svg";
+import { ReactComponent as BlackListIcon } from "./blackListIcon.svg";
+import { ReactComponent as ActivateUserIcon } from "./activateUserIcon.svg";
+import EyeIcon from "./EyeIcon";
+
 
 export {
   ActiveUsersIcon,
@@ -74,6 +78,9 @@ export {
   UserTimesIcon,
   VertMoreIcon,
   SackIcon,
-  FeesIcon
+  FeesIcon,
+  BlackListIcon,
+  ActivateUserIcon,
+  EyeIcon
   
 };

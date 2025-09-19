@@ -4,15 +4,31 @@
 
     font-size: var.$font-sm;
     color: var.$primary-grey;
+    position: relative;
+    
+    
+
   
     table {
       width: 97.7rem;
       border-collapse: collapse; 
     }
 
-    // &_ellipses{
-    //     // display
-    // }
+    &_icon{
+      cursor: pointer;
+    }
+
+    &_orgFilter{
+        position: absolute;
+        left: 1.5rem;
+        top: 6rem;
+    }
+
+     &_userDetails{
+        position: absolute;
+        bottom: 3.1rem;
+        // top: 19.4rem;
+    }
             
     thead {
       font-size: var.$font-xs;
@@ -30,6 +46,7 @@
           align-items: center;
           vertical-align: middle;
           margin-left: 1em; 
+          
         }
          &:last-child {
           padding-right: 0;
@@ -48,6 +65,7 @@
         padding-right: 3.5rem;
         border-bottom: 1px solid var.$primary-blue-border;
         margin: 0;
+        position: relative;
         
 
          &:last-child {

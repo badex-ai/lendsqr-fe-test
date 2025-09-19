@@ -31,7 +31,11 @@ const Header = (props: Props) => {
     </div>
     <div className={styles.header_userInfo}>
       <Link className={styles.header_userInfo_link} to='#'>Docs</Link>
-      <NotifIcon className={styles.header_userInfo_notif} />
+
+      <div>
+        <NotifIcon className={styles.header_userInfo_notif} />
+      </div>
+      
 
       <div className={styles.header_userInfo_image}>
         <img src={user?.image} alt="user profile" />

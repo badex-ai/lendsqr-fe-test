@@ -1,10 +1,22 @@
 import React from 'react'
+import styles from './buttonMd.module.scss'
+interface ButtonMdProps extends React.HTMLAttributes<HTMLDivElement> {
+  vars: 'solid' | 'ghost';
+  text: string;
+  onClickBtn: ()=> void
+}
 
-type Props = {}
+const ButtonMd: React.FC<ButtonMdProps> = ({ vars, text,onClickBtn, ...props }) => {
 
-const ButtonMd = (props: Props) => {
+function getWrapperClass() {
+  return vars === "solid" ? styles.smBtn_solid : styles.smBtn_ghost;
+}
+
   return (
-    <div>Button-md</div>
+
+    <button type='button' onClick={onClickBtn} className={`${styles.smBtn} ${getWrapperClass()}`}>
+      {text}
+    </button>
   )
 }
 

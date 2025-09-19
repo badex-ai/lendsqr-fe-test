@@ -4,6 +4,8 @@ import { StatusEnum,CustomerType } from '../../types';
 import Badge from '../atoms/Badge';
 import { FilterIcon,VertMoreIcon}   from '../../assets/icons';
 import OrgFilter from './OrgFilter';
+import UserDetails from '../molecules/UserDetails';
+import DetailsExpansion from '../molecules/DetailsExpansion';
 
 
 
@@ -44,8 +46,8 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
                 hour12: true
               })}</td>
               <td><Badge text={user.status}/></td>
-              <td className={styles.dashboardTable_ellipses}>
-                <VertMoreIcon onClick={handleOpenDetails}/>
+              <td className={styles.dashboardTable_icon}>
+                <DetailsExpansion/>
               </td>
             </tr>
           ))}
@@ -56,7 +58,7 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
        <table>
         <thead>
           <tr>
-            <th>Organisation <span><FilterIcon onClick={handleOpenFilter}/></span></th>
+            <th>Organisation <span className={styles.dashboardTable_icon}><FilterIcon onClick={handleOpenFilter}/></span></th>
             <th>Username <span><FilterIcon/></span></th>
             <th>Email <span><FilterIcon/></span></th>
             <th>Phone Number <span><FilterIcon/></span></th>
@@ -65,9 +67,10 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
           </tr>
         </thead>
           {tableBody}
-          <div className={styles.dashboardTable_orgFilter}>
+          {openFilter && <div className={styles.dashboardTable_orgFilter}>
             <OrgFilter />
-          </div>
+          </div>}
+          
           
       </table>
 
