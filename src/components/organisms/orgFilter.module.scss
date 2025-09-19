@@ -1,0 +1,23 @@
+@use '../../styles/variables' as var;
+
+.orgFilter{
+    height: calc(60rem - 6rem);
+    width: calc(27rem - 4rem);
+    padding: 3rem 2rem;
+    background-color: var.$primary-white;
+    box-shadow: var.$box-shadow1;
+    border: 1px solid var.$primary-grey-border;
+   
+    &_form{
+         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    
+    &_btns{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+}

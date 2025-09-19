@@ -1,0 +1,32 @@
+@use '../../styles/variables' as var;
+
+.badge{
+    padding: 0.7rem 1.4rem;
+    border-radius: 10rem;
+    font-size: var.$font-sm;
+    display: inline-flex;
+    justify-content:center;
+    align-items: center;
+
+    &_green{
+     color: var.$primary-green;
+     background-color: var.$primary-green-light;
+    }
+
+    &_yellow{
+        color: var.$primary-yellow;
+        background-color: var.$primary-yellow-light;
+
+    }
+
+    &_red{
+        color: var.$primary-red;
+        background-color: var.$primary-red-light;
+
+    }
+
+    &_grey{
+        color: var.$primary-grey;
+        background-color: var.$primary-grey-light;
+    }
+}

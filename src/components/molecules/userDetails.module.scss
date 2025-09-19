@@ -1,0 +1,27 @@
+@use '../../styles/variables' as var;
+.userDetails{
+    width: 18rem ;
+    padding: 2rem 2.1rem;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: .4rem;
+    border: 1px solid var.$primary-grey-border;
+    box-shadow: var.$box-shadow1;
+    background-color: var.$primary-white;
+    font-size: var.$font-sm;
+    font-weight: var.$font-medium;
+    justify-content: space-between;
+    align-content: center;
+
+    a{
+        text-decoration: none;
+    }
+    &_icon{
+        margin-right: .8rem;
+
+
+    }
+
+
+}

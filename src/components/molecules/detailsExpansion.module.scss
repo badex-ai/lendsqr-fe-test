@@ -1,0 +1,11 @@
+.expandDetails{
+    position: relative;
+
+
+    &_content{
+        position: absolute;
+        z-index: 2;
+        right: -8.0rem;
+        top: 9.1rem;
+    }
+}
