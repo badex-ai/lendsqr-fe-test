@@ -5,7 +5,7 @@ import { UseFormRegister, FieldValues, Path, FieldError } from 'react-hook-form'
 
 interface InputSmProps<T extends FieldValues = FieldValues> { 
   id: Path<T>;
-  label: string;
+  label?: string | null;
   type?: "password" | "text" | "email" | "date" | "tel";
   size?: "sm" | "lg";
   placeholder?: string;
@@ -16,7 +16,7 @@ interface InputSmProps<T extends FieldValues = FieldValues> {
 
 const Input = <T extends FieldValues = FieldValues>({
   id,
-  label,
+  label =  null,
   type = "text",
   size = "sm",
   placeholder = "",
@@ -36,12 +36,12 @@ const Input = <T extends FieldValues = FieldValues>({
 
   return (
     <div className={styles.input}>
-      <label
+     {label && <label
         htmlFor={id}
         className={`${styles.input_label} block text-sm font-medium text-gray-700`}
       >
         {label}
-      </label>
+      </label>}
 
       <div className={getWrapperClass()}>
         <input className={styles.input_sm_inp}

@@ -65,7 +65,13 @@ export const loginFormSchema = z.object({
     )
 });
 
+interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
+  vars: 'solid' | 'ghost';
+  text: string;
+  onClickBtn: ()=> void
+}
+
 
 type FilterOrgFormData = z.infer<typeof filterOrgFormSchema>;
 type LoginFormData = z.infer<typeof loginFormSchema>;
-export type {User, UserContextType, NavLinkType,NavLinkArray, SvgIconComponent, StatusEnum,CustomerType,FilterOrgFormData,LoginFormData}
+export type {User, UserContextType, NavLinkType,NavLinkArray, SvgIconComponent, StatusEnum,CustomerType,FilterOrgFormData,LoginFormData,ButtonProps}

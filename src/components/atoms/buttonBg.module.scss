@@ -1,0 +1,21 @@
+@use '../../styles/variables' as var;
+.bgBtn{
+   
+    width: 44.8rem ;
+    height: 4.8rem;
+    border-radius: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_solid{
+        background-color: var.$primary-olive ;
+        // border: 1px solid var.$primary-olive;
+    }
+
+    &_ghost{
+        background-color: white;
+        border: 1px solid var.$primary-grey-border;
+        
+    }
+}

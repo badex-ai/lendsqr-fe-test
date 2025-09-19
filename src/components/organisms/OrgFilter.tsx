@@ -59,7 +59,7 @@ const OrgFilter = (props: Props) => {
       {/* username */}
       <Input 
         id='username' 
-        placeholder='Enter username' 
+        placeholder='User' 
         label='Username' 
         register={register}
         error={errors.username}
@@ -69,7 +69,7 @@ const OrgFilter = (props: Props) => {
       <Input 
         id='userEmail' 
         type='email'
-        placeholder='Enter email' 
+        placeholder='Email' 
         label='Email' 
         register={register}
         error={errors.userEmail}
@@ -79,7 +79,7 @@ const OrgFilter = (props: Props) => {
         {/* Date */}
         <DateInput 
         id='date' 
-        label='Select Date' 
+        label='Date' 
         register={register}
         error={errors.date}
       /> 
