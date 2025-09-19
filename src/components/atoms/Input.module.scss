@@ -1,0 +1,47 @@
+@use '../../styles/variables' as var;
+
+.input{
+    
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none;    
+
+    &_label{
+        font-size: 1.4rem;
+        font-weight: var.$font-medium;
+        
+    }
+    &_sm{
+        width: 23rem;
+        height: 4rem;
+
+        &_inp{
+            background-color: var.$primary-white;
+            width: calc(23rem - 4rem);
+            height: calc(4rem);
+            padding: 0 2rem;
+            border: 1px solid var.$primary-blue; 
+            border-radius: .8rem;
+            margin-top: .6rem;
+            font-size: var.$font-sm;
+        }
+
+    }
+
+    &_lg{
+        width: 44.8rem;
+        height: 5rem;
+
+        
+        
+    }
+
+    &_toggle{
+        font-size: var.$font-xs;
+        font-weight: var.$font-semi-bold;
+        color: var.$primary-olive;
+    }
+
+
+
+}
