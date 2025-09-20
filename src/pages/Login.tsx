@@ -8,11 +8,16 @@ import ButtonBg from '../components/atoms/ButtonBg';
 import styles from './login.module.scss'
 import { Logo } from '../assets/icons';
 import { Link } from 'react-router-dom';
+import {signIn} from '../api'
+import { useNavigate } from 'react-router-dom';
 
 type Props = {}
 
 const Login = (props: Props) => {
-  
+  const navigate = useNavigate();
+
+
+
 
   const {
         register,
@@ -30,10 +35,16 @@ const Login = (props: Props) => {
 
     async function handleLogin(data: LoginFormData) { 
       // isSubmitting
-      console.log(isSubmitting)
-      console.log(data)
-      console.log('here')
-      await new Promise((r) => setTimeout(()=>{console.log('submitting')}, 1000));
+    
+      await new Promise((r) => setTimeout(()=>{
+       const result  = signIn(data)
+       
+       if (result){
+        localStorage.setItem("lqwfreyiurs-rd", JSON.stringify(result));
+        navigate('/dashboard/users');
+       }
+        
+      }, 1000));
     reset(); 
     }
   return (
