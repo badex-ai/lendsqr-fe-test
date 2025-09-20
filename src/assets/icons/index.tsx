@@ -25,7 +25,6 @@ import { ReactComponent as ScrollIcon } from "./scrollIcon.svg";
 import { ReactComponent as SearchIcon } from "./searchIcon.svg";
 import { ReactComponent as SignOutIcon } from "./signOutIcon.svg";
 import { ReactComponent as SlidersIcon } from "./slidersIcon.svg";
-import { ReactComponent as StarIcon } from "./starIcon.svg";
 import { ReactComponent as TransactionIcon } from "./transactionIcon.svg";
 import { ReactComponent as UserCheckIcon } from "./userCheckIcon.svg";
 import { ReactComponent as UserCogIcon } from "./userCogIcon.svg";
@@ -39,6 +38,7 @@ import { ReactComponent as FeesIcon } from "./feeandpricesIcon.svg";
 import { ReactComponent as BlackListIcon } from "./blackListIcon.svg";
 import { ReactComponent as ActivateUserIcon } from "./activateUserIcon.svg";
 import EyeIcon from "./EyeIcon";
+import StarIcon from "./StarIcon";
 
 
 export {
@@ -81,6 +81,7 @@ export {
   FeesIcon,
   BlackListIcon,
   ActivateUserIcon,
-  EyeIcon
+  EyeIcon,
+ 
   
 };
