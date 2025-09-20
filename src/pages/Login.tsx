@@ -64,7 +64,7 @@ const Login = (props: Props) => {
         size='lg'
       />  
 
-      <Link to='/#' className={styles.login_forgot}>forgot password</Link>
+      <Link to='#' className={styles.login_forgot}>forgot password</Link>
       <ButtonBg  loading={isSubmitting} text='LOG IN' vars='solid' onClickBtn={handleSubmit(handleLogin)}/>
         </form>
       </div>
