@@ -23,9 +23,9 @@ const Header = (props: Props) => {
   return (
     <div className={styles.header}>
       
-    <div className={styles.header_logo}>
+    <Link to={'users'} className={styles.header_logo}>
         <Logo/>
-    </div>
+    </Link>
     <div>
     <SearchBar/>
     </div>

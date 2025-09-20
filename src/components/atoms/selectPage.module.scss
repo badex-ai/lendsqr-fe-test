@@ -1,0 +1,38 @@
+@use '../../styles/variables' as var;
+.selectPage{
+    width: calc(8rem - 2.4rem) ;
+    padding: .7rem 1.2rem ;
+    height: calc(3rem - 1.4rem );
+    display: flex;
+    background-color: var.$primary-blue-border ;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+
+    &_input{
+      -webkit-appearance: none; 
+      -moz-appearance: none;
+       appearance: none;
+       border: none;
+       width: 5.6rem;
+        background-color: var.$transparent;
+
+      :focus{
+        outline: 1px solid var.$primary-grey-light;
+      }
+
+
+       
+
+
+    }
+
+    &_icon{
+        position: absolute;
+        right: 1.2rem;
+        top: 0.8rem;
+        pointer-events: none; 
+    }
+   
+}

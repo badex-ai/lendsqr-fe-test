@@ -30,16 +30,40 @@
 
     &_lg{
         width: 44.8rem;
-        height: 5rem;
+        height: 5rem;  
+        position: relative;
 
-        
-        
+        &_inp{
+            background-color: var.$primary-white;
+            width: calc(44.8rem - 4rem);
+            height: calc(4rem);
+            padding: 0 2rem;
+            border: 1px solid var.$primary-blue; 
+            border-radius: .8rem;
+            margin-top: .6rem;
+            font-size: var.$font-sm;
+              position: relative;
+           
+        }
+    }
+
+    &_error{
+
+      font-size: var.$font-xs;
+      color: var.$primary-red;
+      display: inline-block;
+      width: 44.8rem;
+      margin-top: .2rem;;
     }
 
     &_toggle{
         font-size: var.$font-xs;
         font-weight: var.$font-semi-bold;
         color: var.$primary-olive;
+        position: absolute;
+        right: 1.8rem;
+        top: 2rem;
+
     }
 
 

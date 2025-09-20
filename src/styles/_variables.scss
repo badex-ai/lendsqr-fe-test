@@ -10,6 +10,7 @@ $primary-yellow-light: #E9B2001A;
 $primary-grey: #545F7D ;
 $primary-grey-light: #545F7D0F ;
 $primary-grey-border:#545F7D24;
+$primary-grey-num: #545F7D99;
 $primary-blue: #213F7D;
 $primary-blue-light: #213F7D0F; 
 $primary-blue-border:#213F7D1A;
@@ -26,12 +27,23 @@ $box-shadow3: 3px 0px 20px 0px #0000000A;
 
 //FONTS
 $font-xs:1.2rem  ;
+$font-xss:.8rem  ;
 $font-sm: 1.4rem;
 $font-md: 1.6rem;
+$font-md2: 2rem;
 // $font-bg: ;
 $font-Lg:2.4rem;
+$font-Jumbo:4rem;
 
 
 $font-normal: 400;
 $font-medium: 500;
 $font-semi-bold: 600;
+$font-bold: 700;
+
+
+
+$font-primary: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-system: -apple-system, BlinkMacSystemFont, sans-serif;
+$font-avenir: 'Avenir Next', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-sf-compact: 'SF Compact Text', -apple-system, BlinkMacSystemFont, sans-serif;

@@ -5,10 +5,14 @@ import {LoginFormData, loginFormSchema} from '../types'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ButtonBg from '../components/atoms/ButtonBg';
+import styles from './login.module.scss'
+import { Logo } from '../assets/icons';
+import { Link } from 'react-router-dom';
 
 type Props = {}
 
 const Login = (props: Props) => {
+  
 
   const {
         register,
@@ -26,16 +30,23 @@ const Login = (props: Props) => {
 
     async function handleLogin(data: LoginFormData) { 
       // isSubmitting
-      await new Promise((r) => setTimeout(r, 1000));
+      console.log(isSubmitting)
+      console.log(data)
+      console.log('here')
+      await new Promise((r) => setTimeout(()=>{console.log('submitting')}, 1000));
     reset(); 
     }
   return (
-    <div>
-      <div>
+    <div className={styles.login}>
+      <div className={styles.login_left}>
+        <Logo className={styles.login_left_logo}/>
         <img src={signInImage} alt='sign in'/>
       </div>
-      <div>
-        <form onSubmit={handleSubmit(handleLogin)}>
+      <div className={styles.login_right}>
+        <div>
+        <h1>Welcome!</h1>
+        <h2>Enter details to login.</h2>
+        <form>
            <Input 
         id='email' 
         type='email'
@@ -51,11 +62,14 @@ const Login = (props: Props) => {
         register={register}
         error={errors.password}
         size='lg'
-      /> 
-      <div>forgot password</div>
-      <ButtonBg text='LOG IN' vars='solid' onClickBtn={handleLogin}/>
+      />  
+
+      <Link to='/#' className={styles.login_forgot}>forgot password</Link>
+      <ButtonBg  loading={isSubmitting} text='LOG IN' vars='solid' onClickBtn={handleSubmit(handleLogin)}/>
         </form>
       </div>
+        </div>
+       
     </div>
   )
 }

@@ -28,9 +28,10 @@ const Input = <T extends FieldValues = FieldValues>({
   const [showPassword, setShowPassword] = useState(false);
 
 
-  function getWrapperClass() {
-  return size === "sm" ? styles.input_lg : styles.input_sm;
+function getWrapperClass() {
+  return size === "sm" ? "input_sm" : "input_lg";  // Return the exact class name strings
 }
+const sizeStyle = getWrapperClass();
 
   const inputType = type === "password" && showPassword ? "text" : type;
 
@@ -38,13 +39,13 @@ const Input = <T extends FieldValues = FieldValues>({
     <div className={styles.input}>
      {label && <label
         htmlFor={id}
-        className={`${styles.input_label} block text-sm font-medium text-gray-700`}
+        className={styles.input_label}
       >
         {label}
       </label>}
 
-      <div className={getWrapperClass()}>
-        <input className={styles.input_sm_inp}
+      <div className={styles[sizeStyle]}>
+        <input className={styles[`${sizeStyle}_inp`]}
           id={id}
           type={inputType}
           placeholder={placeholder}
@@ -64,8 +65,8 @@ const Input = <T extends FieldValues = FieldValues>({
         )}
       </div>
       
-      {error && (
-        <p className="text-red-500 text-sm mt-1">{error.message}</p>
+      {error && type === 'password' && (
+        <span role="alert" className={styles.input_error}>{error.message}</span>
       )}
     </div>
   );

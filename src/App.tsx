@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
@@ -8,6 +7,7 @@ import DashboardLayout from './components/organisms/DashboardLayout';
 import UsersPage from './pages/UsersPage';
 import UserDetails from './pages/UserDetails';
 import { UserProvider } from './context/userContext';
+import GenralDetails from './components/organisms/GenralDetails';
 
 function App() {
   return (
@@ -19,7 +19,9 @@ function App() {
 
        <Route path="/dashboard" element={<DashboardLayout/>}>
         <Route path="users" element={<UsersPage/>} />
-        <Route path="users/details" element={<UserDetails />} />
+        <Route path="users/details" element={<UserDetails />}>
+          <Route path="general" element={<GenralDetails/>} />
+        </Route>
        </Route>
 
         {/* Fallback / catch-all */}

@@ -19,6 +19,12 @@
     color: var.$primary-grey;
     margin-right: 0.5em;
     }
+
+    &_error{
+      font-size: var.$font-xss;
+      color: var.$primary-red;
+      display: inline-block;
+    }
     
     &_main {
       -webkit-appearance: none; 

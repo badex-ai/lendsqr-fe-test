@@ -2,17 +2,20 @@ import React from 'react'
 import styles from './buttonBg.module.scss'
 import { ButtonProps } from '../../types';
 
-
-const ButtonBg: React.FC<ButtonProps> = ({ vars, text,onClickBtn, ...props }) => {
+interface ButtonBgProps extends ButtonProps {
+  loading?: boolean;
+};
+const ButtonBg: React.FC<ButtonBgProps> = ({ vars, text,onClickBtn,loading=false , ...props }) => {
 
 function getWrapperClass() {
-  return vars === "solid" ? styles.smBtn_solid : styles.smBtn_ghost;
+  return vars === "solid" ? styles.bgBtn_solid : styles.bgBtn_ghost;
 }
 
   return (
 
-    <button type='button' onClick={onClickBtn} className={`${styles.smBtn} ${getWrapperClass()}`}>
-      {text}
+    <button type='button' onClick={onClickBtn} className={`${styles.bgBtn} ${getWrapperClass()}`}>
+      {loading ? "...submitting" : `${text}`}
+      
     </button>
   )
 }

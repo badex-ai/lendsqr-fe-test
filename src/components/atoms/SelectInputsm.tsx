@@ -46,9 +46,9 @@ const SelectInputSm = <T extends FieldValues = FieldValues>({
          </span>
       </div>
       
-      {error && (
-        <p className="text-red-500 text-sm mt-1">{error.message}</p>
-      )}
+      {/* {error && (
+        <span role="alert" className={styles.select_input_error}>{error.message}</span>
+      )} */}
     </div>
   );
 };

@@ -1,0 +1,47 @@
+
+@use '../../styles/variables' as var;
+
+.bottomNav{
+    display: flex;
+    width: 103.7rem;
+    height: 3rem;
+    margin-top: 2rem;
+    justify-content: space-between;
+    font-size: var.$font-sm;
+    color: var.$primary-grey;
+
+   
+
+    &_nav{
+       display: flex;
+       width: 26.2rem;
+       align-items: center;
+       justify-content: space-between;
+       font-size: var.$font-md;
+
+        &_pageInfo{
+            display: flex;
+            align-items: center;
+            
+            span{
+               margin: 0 1rem;
+            }
+            
+         }
+
+
+       &_pages{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        color: var.$primary-grey-num;
+     }
+
+     &_current{
+        color: var.$primary-grey
+     }
+
+
+
+    }
+}

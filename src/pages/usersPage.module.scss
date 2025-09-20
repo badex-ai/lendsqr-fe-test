@@ -2,33 +2,24 @@
 
 .usersPage{
    
-    // margin: 0 auto;
-   
-    
-
     &_title{
         margin-bottom: 4rem;
         text-align: left
     }
 
-
-      &_cardsCont{
+    &_cardsCont{
         display: flex;
         width: 103.7rem;
         justify-content: space-between;
         margin-bottom: 4rem;
     }
 
-        
-   
-
-      &_table{
+    &_table{
         width: calc(103.7rem - 6rem);
         padding: 3rem 3rem;
         background-color: var.$primary-white;
         border: 1px solid var.$primary-blue-border;
-        box-shadow: var.$box-shadow1 
-        
+        box-shadow: var.$box-shadow1  
     }
 
       &_pageNav{

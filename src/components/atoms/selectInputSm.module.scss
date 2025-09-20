@@ -10,6 +10,12 @@
     margin-top: .6rem;
     position: relative;
     // background-color: var.$primary-white;
+
+    &_error{
+      font-size: var.$font-xss;
+      color: var.$primary-red;
+      display: inline-block;
+    }
     
     &_main {
       -webkit-appearance: none; 

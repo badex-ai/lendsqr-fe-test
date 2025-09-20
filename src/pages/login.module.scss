@@ -1,0 +1,59 @@
+@use '../styles/variables' as var;
+.login{
+    width: calc(100% - 21.6rem);
+    display: flex;
+    padding: 10.8rem;
+    background-color:var.$primary-white ;
+
+    &_forgot{
+        color: var.$primary-olive;
+        font-weight: var.$font-semi-bold ;
+        font-size: var.$font-xs;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-top: 2.4rem;
+        display: block;
+        margin-bottom: 3rem;
+    }    
+
+    &_right{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            font-size: var.$font-Jumbo;
+            margin-bottom: 1rem;
+            font-weight: var.$font-bold;
+            font-family: 'Avenir Next';
+
+        }
+
+        h2{
+            font-size: var.$font-md2;
+            margin-bottom: 6rem;
+            font-weight: var.$font-normal;
+            font-family: 'Avenir Next';
+        }
+       
+
+        &_form{
+             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+     &_left{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+
+        &_logo{
+            margin-left: 3rem;
+            margin-bottom: 14rem;
+        }
+    }
+}

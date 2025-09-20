@@ -34,9 +34,9 @@ const DateInput = <T extends FieldValues = FieldValues>({
         </span>
       </div>
       
-      {error && (
-        <p className="text-red-500 text-sm mt-1">{error.message}</p>
-      )}
+      {/* {error && (
+        <span role="alert" className={styles.date_input_error}>{error.message}</span>
+      )} */}
     </div>
   );
 };

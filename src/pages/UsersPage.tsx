@@ -1,15 +1,16 @@
-import React from 'react'
-import Orgfilter from '../components/molecules/Orgfilter'
+import React ,{useState} from 'react'
 import InfoCard from '../components/molecules/InfoCard'
 import DashboardTable from '../components/organisms/DashboardTable'
 import { UsersIcon , ActiveUsersIcon,CoinIcon, CoinSheet} from '../assets/icons' 
-import { length } from 'zod'
 import { CustomerType } from '../types'
 import styles from './usersPage.module.scss'
+import BottomNavigation from '../components/organisms/BottomNavigation'
 
 type Props = {}
 
-const Users = (props: Props) => {
+const Users :React.FC = (props: Props) => {
+
+  const [currentPage, setCurrentPage] = useState('1')
 
   const staticCustomerData : CustomerType[]  = [
   {
@@ -1633,6 +1634,12 @@ const Users = (props: Props) => {
     "status": "Blacklisted"
   }
 ]
+const customersPerPage = 9
+let endingIndex = parseInt(currentPage) * customersPerPage
+let startingIndex = endingIndex - customersPerPage
+let displayedCustomers = staticCustomerData.slice(startingIndex, endingIndex);
+
+const pages = staticCustomerData.length / customersPerPage
 
 const activeUsers   = staticCustomerData.filter((userData)=>{
     return userData.status === "Active"
@@ -1649,6 +1656,12 @@ const infoCards   = infoCardArray.map((info)=>{
 
 
 
+function handlePageChange(page:string) {
+  const start = page
+  setCurrentPage(start)
+}
+
+
   return (
     <div className={styles.usersPage}>
       <h1>Users</h1>
@@ -1656,12 +1669,9 @@ const infoCards   = infoCardArray.map((info)=>{
        {infoCards}
       </div >
       <div className={styles.usersPage_table}>
-        <DashboardTable customers={staticCustomerData}/>
-        <div><Orgfilter/></div>
+        <DashboardTable customers={displayedCustomers}/>
       </div>
-      <div>
-        pagination
-      </div>
+      <BottomNavigation currentPage={currentPage} onPageClick={handlePageChange} pagesLength={pages}/>
       
 
     </div>

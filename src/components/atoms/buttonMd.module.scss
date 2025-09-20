@@ -1,5 +1,5 @@
 @use '../../styles/variables' as var;
-.smBtn{
+.mdBtn{
     // padding: 1.2rem 3rem;
     width: 9.8rem ;
     height: 4rem;
@@ -7,15 +7,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     &_solid{
         background-color: var.$primary-olive ;
         border: 1px solid var.$primary-olive;
+        color: var.$primary-white;
     }
 
     &_ghost{
         background-color: white;
         border: 1px solid var.$primary-grey-border;
+
         
     }
 }

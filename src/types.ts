@@ -1,6 +1,3 @@
-import { Component} from "react";
-import { useForm, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 type SvgIconComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 
@@ -48,7 +45,7 @@ export const filterOrgFormSchema = z.object({
   phoneNumber: z.string()
     .trim()
     .min(10, 'Phone number must be at least 10 digits')
-    .regex(/^[\+]?[1-9][\d]{0,15}$/, 'Invalid phone number format'),
+    .regex(/^[+]?[1-9][\d]{0,15}$/, 'Invalid phone number format'),
   status: z.string().min(1, 'Status is required')
 });
 
@@ -61,7 +58,7 @@ export const loginFormSchema = z.object({
     .min(8, 'Password must be at least 8 characters')
     .regex(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
-      'Password must contain at least one uppercase letter, one lowercase letter, and one number'
+      'Password must include an uppercase, lowercase letter, and a number.'
     )
 });
 
