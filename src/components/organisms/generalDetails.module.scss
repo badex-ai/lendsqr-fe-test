@@ -1,0 +1,12 @@
+@use '../../styles/variables' as var;
+
+.generalDetails{
+    width: calc(103.7rem - 6rem);
+    padding: 3rem;
+    background-color: var.$primary-white;
+    border: 1px solid var.$primary-blue-light;
+    box-shadow: var.$box-shadow1;
+    margin-top: 3rem;
+   
+
+}

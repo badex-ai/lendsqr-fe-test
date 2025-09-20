@@ -1,0 +1,119 @@
+@use '../../styles/variables' as var;
+
+.userDetailsHeader{
+    width: calc(100% - 6rem);
+    height: calc(21rem - 3rem);
+    padding: 0 3rem;
+    padding-top: 3rem;
+    border: 1px solid var.$primary-blue-light;
+    box-shadow: var.$box-shadow1;
+    background-color: var.$primary-white;
+
+
+    &_nav{
+        width: 100%;
+        margin-top: 4.6rem;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+
+        ul {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 6 equal boxes */
+        margin: 0 auto;
+        }
+
+       
+
+        &_li {
+            font-family: 'SF Compact Text';
+            font-size: var.$font-md;
+            color: black;
+            padding: .9rem 2.5rem ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+
+            a{
+                text-decoration: none;
+            }
+
+             &_active{
+                color: var.$primary-olive;
+                border-bottom: 1px solid var.$primary-olive;
+                
+            }
+
+            
+            
+        }
+
+    }
+
+    &_top{
+        width: 61.3rem;
+        height: 10rem;
+        display: flex;
+        font-size: var.$font-md;
+        justify-content: space-between;
+        align-items: center;
+
+          &_details{
+            width: 49.3rem;
+            display: flex;
+
+            div{
+            
+                div{
+                    display: inline-block;
+                    margin-bottom: .8rem;
+
+                   
+                     
+                }
+            }
+
+            
+            &_tier{
+                width: 13.3rem;
+                border-left: 1px solid var.$primary-grey-box;
+                border-right: 1px solid var.$primary-grey-box;
+                flex-shrink: 0;
+                text-align: center;
+
+                 &_icon{
+                        width:5.4rem ;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+            }
+           
+            &_first{
+                width: 17rem;
+                flex-shrink: 0;
+            }
+
+            &_last{
+                text-align: center;
+            }
+            &_sub{
+                      font-size: var.$font-xs;  
+
+                    }
+
+            &_head{
+                        font-size: var.$font-md3;
+                        font-weight: var.$font-medium;
+                        
+                    }
+
+                
+          }
+
+
+
+
+    }
+
+}
