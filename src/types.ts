@@ -68,7 +68,54 @@ interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
   onClickBtn: ()=> void
 }
 
+type UserInfoType = {
+  id: string; 
+  personalInformation: {
+    fullName: string;
+    phoneNumber: string;
+    emailAddress: string;
+    bvn: string;
+    gender: string;
+    maritalStatus: string;
+    children: string;
+    residenceType: string;
+  };
+  accountInformation: {
+    accountBalance: string; 
+    tier: number;           
+    accountNumber: string;  
+    bankName: string;      
+  };
+  educationAndEmployment: {
+    levelOfEducation: string;
+    employmentStatus: string;
+    sectorOfEmployment: string;
+    durationOfEmployment: string;
+    officeEmail: string;
+    monthlyIncome: string;
+    loanRepayment: string;
+  };
+  socials: {
+    twitter: string;
+    facebook: string;
+    instagram: string;
+  };
+  guarantor: Array<{
+    fullName: string;
+    phoneNumber: string;
+    emailAddress: string;
+    relationship: string;
+  }>;
+};
+
+type PersonalInformationType = UserInfoType["personalInformation"];
+type AccountInformationType = UserInfoType["accountInformation"];
+type EducationAndEmploymentType = UserInfoType["educationAndEmployment"];
+type SocialsType = UserInfoType["socials"];
+type Guarantor = UserInfoType["guarantor"]
+
+
 
 type FilterOrgFormData = z.infer<typeof filterOrgFormSchema>;
 type LoginFormData = z.infer<typeof loginFormSchema>;
-export type {User, UserContextType, NavLinkType,NavLinkArray, SvgIconComponent, StatusEnum,CustomerType,FilterOrgFormData,LoginFormData,ButtonProps}
+export type {User, UserContextType, NavLinkType,NavLinkArray, SvgIconComponent, StatusEnum,CustomerType,FilterOrgFormData,LoginFormData,ButtonProps,UserInfoType, PersonalInformationType, AccountInformationType, EducationAndEmploymentType, SocialsType,Guarantor}
