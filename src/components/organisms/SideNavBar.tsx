@@ -17,30 +17,30 @@ const Sidebar = () => {
 
     const customersLinks :NavLinkArray = [
   { name: "Users", link: "/dashboard/users", icon: UserFriendsIcon },
-  { name: "Guarantors", link: "/", icon: Users2Icon },
-  { name: "Loans", link: "/", icon: SackIcon },
-  { name: "Decision Models", link: "/", icon: HandshakeIcon },
-  { name: "Savings", link: "/", icon: PiggyBankIcon },
-  { name: "Loan Requests", link: "/", icon: CashHandIcon },
-  { name: "Whitelist", link: "/", icon: UserCheckIcon},
-  { name: "Karma", link: "/", icon: UserTimesIcon },
+  { name: "Guarantors", link: "guarantors", icon: Users2Icon },
+  { name: "Loans", link: "loans", icon: SackIcon },
+  { name: "Decision Models", link: "models", icon: HandshakeIcon },
+  { name: "Savings", link: "savings", icon: PiggyBankIcon },
+  { name: "Loan Requests", link: "loan-request", icon: CashHandIcon },
+  { name: "Whitelist", link: "whitelist", icon: UserCheckIcon},
+  { name: "Karma", link: "karma", icon: UserTimesIcon },
 ];
    const servicesLinks :NavLinkArray=  [
-  { name: "Organization", link: "/", icon: Briefcase1Icon },
-  { name: "Loan Products", link: "/", icon: CashHandIcon },
-  { name: "Savings Products", link: "/", icon: BankIcon },
-  { name: "Fees and Charges", link: "/", icon: CoinsSolidIcon },
-  { name: "Transactions", link: "/", icon: TransactionIcon },
-  { name: "Services", link: "/", icon: GalaxyIcon },
-  { name: "Service Account", link: "/", icon: UserCogIcon },
-  { name: "Settlements", link: "/", icon: ScrollIcon},
-  { name: "Reports", link: "/", icon: ChartIcon },
+  { name: "Organization", link: "organization", icon: Briefcase1Icon },
+  { name: "Loan Products", link: "loan-product", icon: CashHandIcon },
+  { name: "Savings Products", link: "savings-products", icon: BankIcon },
+  { name: "Fees and Charges", link: "fees-charges", icon: CoinsSolidIcon },
+  { name: "Transactions", link: "transactions", icon: TransactionIcon },
+  { name: "Services", link: "services", icon: GalaxyIcon },
+  { name: "Service Account", link: "service-account", icon: UserCogIcon },
+  { name: "Settlements", link: "settlements", icon: ScrollIcon},
+  { name: "Reports", link: "reports", icon: ChartIcon },
 ];
 
    const businessesLinks :NavLinkArray = [
-  { name: "Preferences", link: "/", icon: SlidersIcon },
-  { name: "Fees and Pricing", link: "/", icon: BadgePercentIcon },
-  { name: "Audit Logs", link: "/", icon: ClipboardIcon },
+  { name: "Preferences", link: "preferences", icon: SlidersIcon },
+  { name: "Fees and Pricing", link: "fees-and-pricing", icon: BadgePercentIcon },
+  { name: "Audit Logs", link: "audit-logs", icon: ClipboardIcon },
 ];
 
    const customerTabLinks = customersLinks.map((obj:NavLinkType)=>{
