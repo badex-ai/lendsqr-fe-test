@@ -7,7 +7,7 @@ import DashboardLayout from './components/organisms/DashboardLayout';
 import UsersPage from './pages/UsersPage';
 import UserDetails from './pages/UserDetails';
 import { UserProvider } from './context/userContext';
-import GenralDetails from './components/organisms/GenralDetails';
+import GeneralDetails from './components/organisms/GeneralDetails';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
        <Route path="/dashboard" element={<DashboardLayout/>}>
         <Route path="users" element={<UsersPage/>} />
         <Route path="users/details" element={<UserDetails />}>
-          <Route path="general" element={<GenralDetails/>} />
+          <Route path="general" element={<GeneralDetails/>} />
         </Route>
        </Route>
 

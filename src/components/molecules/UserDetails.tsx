@@ -10,7 +10,7 @@ const UserDetails = (props: Props) => {
     <div className={styles.userDetails}>
         <ul>
             <li>
-            <Link to='details'>
+            <Link to='details/general'>
                 <span className={styles.userDetails_icon}><EyeIcon/></span> View Details
             </Link>
         </li>
