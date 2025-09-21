@@ -2,6 +2,7 @@ import React from 'react'
 import GridA from './GridA'
 import { UserInfoType,PersonalInformationType, AccountInformationType, EducationAndEmploymentType, SocialsType } from '../../types'
 import styles from './generalDetails.module.scss'
+import useIsMobile from '../../hooks/IsMobile'
 type Props = {}
 
 const GeneralDetails = (props: Props) => {
@@ -47,35 +48,33 @@ const GeneralDetails = (props: Props) => {
     ]
   }
 
-  // Fixed: Personal Information and Education & Employment
+  const isMobile = useIsMobile()
+
+  
   const info1: ('personalInformation' | 'educationAndEmployment')[] = ['personalInformation', 'educationAndEmployment'];
 
-  const components1 = info1.map((key) => {
+ let gridNum = isMobile ? [4,3] :[5,4]
+  console.log(gridNum[1],'this is index 1')
+  console.log(gridNum[0], 'this is index 2')
+
+  let  components1 = info1.map((key) => {
     return (
       <GridA 
         key={key}
-        columns={key === 'personalInformation' ? 5 : 4}
+        columns={key === 'personalInformation' ? gridNum[0] : gridNum[1]}
         userInfo={userInfoStatic[key]} 
         infoName={key} 
       />
     );
   });
 
-  // Fixed: Socials component
-  // const component2 = (
-  //   <GridA 
-  //     key="socials"
-  //     columns={3} 
-  //     userInfo={userInfoStatic.socials} 
-  //     infoName="socials"
-  //   />
-  // );
+ 
 
   
   const component2 = (
     <GridA 
       key="socials"
-      columns={5} 
+      columns={gridNum[0]} 
       userInfo={userInfoStatic.socials} 
       infoName="socials"
     />
@@ -85,7 +84,7 @@ const GeneralDetails = (props: Props) => {
     return (
       <GridA 
         key={`guarantor`} 
-        columns={5} 
+        columns={gridNum[0]} 
         userInfo={guarantorInfo}
         infoName={`guarantor ${index + 1}`}
       />

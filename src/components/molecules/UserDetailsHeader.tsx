@@ -34,7 +34,7 @@ if(isMobile){
   { label: "App and System", to: "app-system" }
 ]
 }
-console.log(isMobile,"tis it te mobiel state")
+
    
 
 

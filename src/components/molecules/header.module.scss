@@ -70,7 +70,7 @@
     }
 
     @include mobile-down{
-
+      width: calc(100vw - 6rem );
       &_ham{
        display: block;
         
