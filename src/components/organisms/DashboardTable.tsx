@@ -36,15 +36,15 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
               <td>{user.username}</td>
               <td>{user.email}</td>
               <td>{user.phone_number}</td>
-              <td>{new Date(user.date_joined).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              }) + ' ' + new Date(user.date_joined).toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true
-              })}</td>
+              <td>{new Date(user.date_joined).toLocaleString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  hour: 'numeric',
+                  minute: '2-digit',
+                  hour12: true
+                })}
+              </td>
               <td><Badge text={user.status}/></td>
               <td className={styles.dashboardTable_icon}>
                 <DetailsExpansion/>
