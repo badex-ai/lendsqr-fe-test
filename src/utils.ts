@@ -4,4 +4,3 @@ export function formatKey(key: string): string {
     .replace(/^./, str => str.toUpperCase()); // capitalize first letter
 }
 
-console.log(formatKey("personalInformation")); 

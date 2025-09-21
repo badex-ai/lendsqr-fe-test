@@ -28,6 +28,7 @@ $box-shadow3: 3px 0px 20px 0px #0000000A;
 
 //FONTS
 $font-xs:1.2rem  ;
+$font-xs2:1.1rem  ;
 $font-xss:.8rem  ;
 $font-sm: 1.4rem;
 $font-md: 1.6rem;
@@ -45,7 +46,20 @@ $font-bold: 700;
 
 
 
-$font-primary: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-$font-system: -apple-system, BlinkMacSystemFont, sans-serif;
-$font-avenir: 'Avenir Next', -apple-system, BlinkMacSystemFont, sans-serif;
-$font-sf-compact: 'SF Compact Text', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-primary: 'Work Sans', sans-serif;
+$font-avenir: 'Avenir Next', sans-serif;
+$font-sf: 'SF Compact', sans-serif;
+
+
+$mobile: 320px;
+$mobile-landscape: 576px;
+$tablet: 768px;
+$desktop: 1024px;
+$desktop-large: 1200px;
+$desktop-xl: 1400px;
+
+
+$desktop: 1200px;
+$tablet: 992px;
+$mobile-landscape: 768px;
+$mobile: 576px;

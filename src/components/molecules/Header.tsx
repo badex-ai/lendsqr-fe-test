@@ -15,11 +15,11 @@ const Header = (props: Props) => {
 
 
     function handleUserInfoDropDown() {
-      console.log('drop down initiated')
+      
       
     }
 
-    console.log('this is the user',user)
+   
   return (
     <div className={styles.header}>
       

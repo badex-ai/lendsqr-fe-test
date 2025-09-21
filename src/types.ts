@@ -2,6 +2,7 @@ import { z } from 'zod';
 type SvgIconComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 
 interface User {
+    id: string
     name: string
     image : any
 

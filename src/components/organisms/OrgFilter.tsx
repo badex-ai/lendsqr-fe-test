@@ -33,7 +33,7 @@ const OrgFilter = (props: Props) => {
 
 
   function onFilterOrgFormSubmit(data: FilterOrgFormData) { 
-    console.log('Form submitted:', data); 
+    
   }
 
   function handleResetClick() { 

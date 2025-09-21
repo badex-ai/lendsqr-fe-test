@@ -1,4 +1,5 @@
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
 
 .generalDetails{
     width: calc(103.7rem - 6rem);
@@ -8,5 +9,15 @@
     box-shadow: var.$box-shadow1;
     margin-top: 3rem;
    
+     @include desktop-down {
+        // Tablet/mobile styles for sidebarLink
+        width: 8.0rem;
 
+        
+    }
+
+    @include mobile-down{
+        display: none;
+        
+    }
 }

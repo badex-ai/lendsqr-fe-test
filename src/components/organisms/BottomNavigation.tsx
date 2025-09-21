@@ -43,7 +43,7 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
 
         const pagesEnd = [...Array(2)].map((_, index) => {
             const pageNumber = pagesLength - 1 + index; 
-            console.log('pagesEnd pageNumber:', pageNumber);
+           
             return (
                 <button 
                     key={`end-${pageNumber}`} // Unique keys to avoid conflicts

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { BackArrowIcon } from '../assets/icons'
 import { Outlet } from 'react-router-dom'
 import UserDetailsHeader from '../components/molecules/UserDetailsHeader'
@@ -6,10 +6,12 @@ import ButtonColor from '../components/atoms/ButtonColor'
 import styles from './userDetails.module.scss'
 import { Link } from 'react-router-dom'
 import { UserInfoType } from '../types'
+import {getCutomerDetails} from '../api'
 
 type Props = {}
 
 const UserDetails = (props: Props) => {
+  const [customerDetails, setcustomerDetails] = useState<UserInfoType| null>(null)
 
   const userInfoStatic : UserInfoType = {
   id: "LSQFf587g90",
@@ -53,10 +55,16 @@ const UserDetails = (props: Props) => {
   ]
 }
 
+  useEffect(() => {
+    
+    setcustomerDetails(getCutomerDetails)
+  }, [])
+  
+
 
 
   function handleBtnClick(){
-    console.log('Btn clicked')
+   
   }
   return (
     <div className={styles.userDetails}>
@@ -72,7 +80,8 @@ const UserDetails = (props: Props) => {
         </div>
         </div>
 
-       <UserDetailsHeader userInfo={userInfoStatic}/>
+       { customerDetails &&
+       <UserDetailsHeader userInfo={customerDetails}/>}
 
        {/* </div> */}
     

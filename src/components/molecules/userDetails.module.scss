@@ -1,4 +1,6 @@
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
+
 .userDetails{
     width: calc(18rem - 4.2rem );
     padding: 2rem 2.1rem;
@@ -34,6 +36,15 @@
 
 
     }
+    @include desktop-down {
+        // Tablet/mobile styles for sidebarLink
+        width: 8.6rem;
+        
+    }
 
+    @include mobile-down{
+        display: none;
+        
+    }
 
 }

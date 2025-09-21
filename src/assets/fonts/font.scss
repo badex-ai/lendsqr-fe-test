@@ -1,8 +1,6 @@
-/* Avenir Next Regular */
 @font-face {
     font-family: 'Avenir Next';
-    src: url('./avenir-next/AvenirNext-Regular.woff2') format('woff2'),
-         url('./avenir-next/AvenirNext-Regular.woff') format('woff');
+    src: url('./Avenir_Next/AvenirNextLTPro-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -11,9 +9,17 @@
 /* Avenir Next Bold */
 @font-face {
     font-family: 'Avenir Next';
-    src: url('./avenir-next/AvenirNext-Bold.woff2') format('woff2'),
-         url('./avenir-next/AvenirNext-Bold.woff') format('woff');
+    src: url('./Avenir_Next/AvenirNextLTPro-Bold.otf') format('opentype');
     font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SF Compact Text Regular */
+@font-face {
+    font-family: 'SF Compact';
+    src: url('./SfCompact/SF-Compact-Text-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }

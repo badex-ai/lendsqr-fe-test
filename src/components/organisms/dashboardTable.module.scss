@@ -1,4 +1,5 @@
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
 
 .dashboardTable{
 
@@ -77,5 +78,19 @@
         border-bottom: none;
       }
     }
+    @include desktop-down {
+        
+         overflow-x: scroll;
+      
+    }
+
+    @include mobile-down{
+       
+
+        
+    }
+
+       
+
 }
 

@@ -44,15 +44,15 @@ const Sidebar = () => {
 ];
 
    const customerTabLinks = customersLinks.map((obj:NavLinkType)=>{
-    return <SideBarLink  name ={obj.name} link={obj.link} icon={obj.icon} />
+    return <SideBarLink key={`sidebar${obj.name}`} name ={obj.name} link={obj.link} icon={obj.icon} />
    })
 
     const businessesTabLinks = businessesLinks.map((obj:NavLinkType)=>{
-    return <SideBarLink  name ={obj.name} link={obj.link} icon={obj.icon} />
+    return <SideBarLink key={`sidebar${obj.name}`} name ={obj.name} link={obj.link} icon={obj.icon} />
    })
 
     const servicesTabLinks = servicesLinks.map((obj:NavLinkType)=>{
-    return <SideBarLink  name ={obj.name} link={obj.link} icon={obj.icon} />
+    return <SideBarLink key={`sidebar${obj.name}`} name ={obj.name} link={obj.link} icon={obj.icon} />
    })
   return (
     
@@ -60,8 +60,11 @@ const Sidebar = () => {
 
       <div className={styles.sidebar_tenet  } >
         <BriefCase2Icon/>
-        Switch organisation
-        <NextIcon/>
+        <span>
+          Switch organisation
+        </span>
+          <NextIcon/>
+        
       </div>
       
       <div>

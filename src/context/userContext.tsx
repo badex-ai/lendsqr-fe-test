@@ -8,13 +8,22 @@ type UserProviderProps = {
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-const staticUser : User = {name:"Adedeji", image: userImage }
+const staticUser : User = {id:'lqwfreyiurs-rd' , name:"Adedeji", image: userImage }
+//  localStorage.getItem()
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
     
   const [user, setUser] = useState<User | null>(staticUser);
 
 //   const logout = () => setUser(null);
+  const userFromStorage = localStorage.getItem('user')
+  if (userFromStorage) {
+  const userInfo = JSON.parse(userFromStorage) as User
+
+     setUser(userInfo)
+  }
+
+
 
   return (
     <UserContext.Provider value={{ user }}>

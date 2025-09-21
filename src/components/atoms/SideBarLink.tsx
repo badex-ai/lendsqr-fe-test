@@ -14,7 +14,7 @@ function SideBarLink({link,icon : Icon,name}: Props) {
         {/* <div> */}
           <span className={styles.sidebarLink_icon}><Icon/></span>
           
-          {name}
+          <span className={styles.sidebarLink_text}>{name}</span>
          
         {/* </div> */}
     

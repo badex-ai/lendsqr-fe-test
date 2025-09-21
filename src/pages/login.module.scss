@@ -1,6 +1,7 @@
 @use '../styles/variables' as var;
 .login{
     width: calc(100% - 21.6rem);
+    height: calc(100vh - 21.6rem);
     display: flex;
     padding: 10.8rem;
     background-color:var.$primary-white ;
@@ -26,15 +27,17 @@
             font-size: var.$font-Jumbo;
             margin-bottom: 1rem;
             font-weight: var.$font-bold;
-            font-family: 'Avenir Next';
-
+            font-family: var.$font-avenir;
+            letter-spacing: -4 ;
+            color: var.$primary-blue;
         }
 
         h2{
             font-size: var.$font-md2;
             margin-bottom: 6rem;
             font-weight: var.$font-normal;
-            font-family: 'Avenir Next';
+            font-family: var.$font-avenir;
+            color:var.$primary-grey
         }
        
 

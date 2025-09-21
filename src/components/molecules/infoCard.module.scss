@@ -1,4 +1,5 @@
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
 
 .infocard{
     width: calc(24rem - 6rem);
@@ -21,5 +22,35 @@
         font-size: var.$font-Lg;
         color: var.$primary-blue
     }
+
+     @include desktop-down {
+
+            width: 12rem;    
+            height: 8rem;   
+            padding: 1.5rem 2rem;
+
+            svg{
+                width: 3rem;
+                height: 3rem;
+            }
+
+            &_title{
+               
+                font-size: var.$font-xs2;
+                margin-top: 0.6rem;
+                margin-bottom: .8rem;
+                
+            }
+
+            &_value{
+                font-size: var.$font-md2;
+                color: var.$primary-blue
+            }
+    }
+
+    @include mobile-down{
+        width: calc(100vw - 2rem)   ; 
+    }
    
+
 }

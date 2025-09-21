@@ -1,17 +1,15 @@
-import React ,{useState} from 'react'
+import React ,{useState,useEffect} from 'react'
 import InfoCard from '../components/molecules/InfoCard'
 import DashboardTable from '../components/organisms/DashboardTable'
 import { UsersIcon , ActiveUsersIcon,CoinIcon, CoinSheet} from '../assets/icons' 
 import { CustomerType } from '../types'
 import styles from './usersPage.module.scss'
 import BottomNavigation from '../components/organisms/BottomNavigation'
+import { getCustomers } from '../api'
 
 type Props = {}
 
 const Users :React.FC = (props: Props) => {
-
-  const [currentPage, setCurrentPage] = useState('1')
-
   const staticCustomerData : CustomerType[]  = [
   {
     "id": "e5dfe5d2-d7b9-45ba-ba02-d461a3c90f04",
@@ -1634,24 +1632,33 @@ const Users :React.FC = (props: Props) => {
     "status": "Blacklisted"
   }
 ]
+  const [currentPage, setCurrentPage] = useState('1')
+  const [customers, setCustomers] = useState<CustomerType[]>(staticCustomerData)
+
+  // useEffect(() => {
+  //  getCustomers()
+  // }, [])
+  
+
+
 const customersPerPage = 9
 let endingIndex = parseInt(currentPage) * customersPerPage
 let startingIndex = endingIndex - customersPerPage
-let displayedCustomers = staticCustomerData.slice(startingIndex, endingIndex);
+let displayedCustomers = customers.slice(startingIndex, endingIndex);
 
-const pages = staticCustomerData.length / customersPerPage
+const pages = customers.length / customersPerPage
 
-const activeUsers   = staticCustomerData.filter((userData)=>{
+const activeUsers   = customers.filter((userData)=>{
     return userData.status === "Active"
 })
 
 const staticLoans= Array(12453).fill(null);
 const staticSavings= Array(102453).fill(null)
 
-const infoCardArray = [{name: 'users', length: staticCustomerData.length,icon: UsersIcon}, {name: 'active users', length : activeUsers.length, icon: ActiveUsersIcon},{name: "users with loans", length: staticLoans.length, icon: CoinSheet}, {name: "users with savings", length: staticSavings.length, icon: CoinIcon}]
+const infoCardArray = [{name: 'users', length: customers.length,icon: UsersIcon}, {name: 'active users', length : activeUsers.length, icon: ActiveUsersIcon},{name: "users with loans", length: staticLoans.length, icon: CoinSheet}, {name: "users with savings", length: staticSavings.length, icon: CoinIcon}]
 
 const infoCards   = infoCardArray.map((info)=>{
-  return  <InfoCard name = {info.name} value={info.length} icon={info.icon}/>
+  return  <InfoCard key={`infocard${info.name}`}  name = {info.name} value={info.length} icon={info.icon}/>
 })
 
 

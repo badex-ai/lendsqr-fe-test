@@ -23,7 +23,7 @@ const UserDetailsHeader = ({userInfo}: Props) => {
  const links = <ul>
   {navItems.map((item) => (
     <li key={item.to}>
-      <NavLink className={({ isActive }) => 
+      <NavLink key={`3-${item.label}`} className={({ isActive }) => 
         `${styles.userDetailsHeader_nav_li} ${isActive ? styles.userDetailsHeader_nav_li_active : ""}`} to={item.to}>{item.label}</NavLink>
     </li>
   ))}

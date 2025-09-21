@@ -1,5 +1,6 @@
 
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
 
 .bottomNav{
     display: flex;
@@ -43,5 +44,14 @@
 
 
 
+    }
+
+    @include desktop-down {
+
+            width: 86rem;       
+    }
+
+    @include mobile-down{
+        width: calc(100vw - 2rem)   ; 
     }
 }
