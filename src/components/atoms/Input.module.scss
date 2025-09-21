@@ -1,5 +1,5 @@
 @use '../../styles/variables' as var;
-
+@import '../../styles/mixins';
 .input{
     
     -webkit-appearance: none; 
@@ -64,6 +64,19 @@
         right: 1.8rem;
         top: 2rem;
 
+    }
+
+     @include mobile-down{
+           font-size: var.$font-sm;
+           
+           
+          &_sm{
+            &_inp{
+                
+             height: 3.4rem;
+            }
+
+          } 
     }
 
 

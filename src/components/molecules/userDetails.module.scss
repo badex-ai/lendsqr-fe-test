@@ -37,13 +37,12 @@
 
     }
     @include desktop-down {
-        // Tablet/mobile styles for sidebarLink
-        width: 8.6rem;
+        
         
     }
 
     @include mobile-down{
-        display: none;
+        
         
     }
 

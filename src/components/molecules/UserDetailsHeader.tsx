@@ -4,21 +4,40 @@ import { NavLink,Link } from 'react-router-dom'
 import styles from './userDetailsHeader.module.scss'
 import {StarIcon} from '../../assets/icons/index'
 import { UserInfoType } from '../../types'
+import useIsMobile from '../../hooks/IsMobile';
+
 
 type Props = {
   userInfo: UserInfoType
 }
 
 const UserDetailsHeader = ({userInfo}: Props) => {
+const isMobile = useIsMobile();
 
-  const navItems = [
+let navItems
+if(isMobile){
+  navItems  =[
+  { label: "General", to: "general" },
+  { label: "Documents", to: "documents" },
+  { label: "Bank ", to: "bank-details" },
+  { label: "Loans", to: "loans" },
+  { label: "Savings", to: "savings" },
+  { label: "System", to: "app-system" }
+];
+}else{
+  navItems =  [
   { label: "General Details", to: "general" },
   { label: "Documents", to: "documents" },
   { label: "Bank Details", to: "bank-details" },
   { label: "Loans", to: "loans" },
   { label: "Savings", to: "savings" },
   { label: "App and System", to: "app-system" }
-];
+]
+}
+console.log(isMobile,"tis it te mobiel state")
+   
+
+
 
  const links = <ul>
   {navItems.map((item) => (

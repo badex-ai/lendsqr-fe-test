@@ -39,6 +39,8 @@ import { ReactComponent as BlackListIcon } from "./blackListIcon.svg";
 import { ReactComponent as ActivateUserIcon } from "./activateUserIcon.svg";
 import EyeIcon from "./EyeIcon";
 import StarIcon from "./StarIcon";
+import  HamburgerMenu from "./HambugerMenu"
+import { ReactComponent as Settings} from "./settings.svg"
 
 
 export {
@@ -82,6 +84,9 @@ export {
   BlackListIcon,
   ActivateUserIcon,
   EyeIcon,
+  HamburgerMenu,
+  Settings
+
  
   
 };

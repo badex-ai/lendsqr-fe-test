@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import SearchBar from './SearchBar'
 import {NotifIcon, Logo} from '../../assets/icons/index'
 import styles from "./header.module.scss";
@@ -6,12 +6,15 @@ import { useUser } from '../../context/userContext';
 import { User } from '../../types';
 import { Link } from 'react-router-dom';
 import { DropDownIcon } from '../../assets/icons/index';
-
+import { HamburgerMenu } from '../../assets/icons/index';
+import MobileNav from '../organisms/mobileNav';
 type Props = {}
 
 const Header = (props: Props) => {
 
     const {user}  = useUser()
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  
 
 
     function handleUserInfoDropDown() {
@@ -19,9 +22,20 @@ const Header = (props: Props) => {
       
     }
 
+   const handleOpenMobileNav = () => {
+    setIsMobileNavOpen(true);
+  };
+
+  const handleCloseMobileNav = () => {
+    setIsMobileNavOpen(false);
+  };
+
    
   return (
     <div className={styles.header}>
+    <button className={styles.header_ham} title='hanburgerIcon' type='button' onClick={handleOpenMobileNav} >
+      <HamburgerMenu/>
+    </button>
       
     <Link to={'users'} className={styles.header_logo}>
         <Logo/>
@@ -49,6 +63,10 @@ const Header = (props: Props) => {
      
   
     </div>
+    <MobileNav 
+        isOpen={isMobileNavOpen} 
+        onClose={handleCloseMobileNav} 
+      />
 
 
     </div>

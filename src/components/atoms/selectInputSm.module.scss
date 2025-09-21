@@ -1,4 +1,7 @@
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
+
+
 
 .select {
   &_label {
@@ -35,7 +38,36 @@
       position: absolute;
       top: 1.3rem;
       right: 2rem;
-      pointer-events: none; 
+    pointer-events: none; 
     }
   }
+
+  @include mobile-down{
+           
+          //  width: 20rem;
+           
+          
+            &_input{
+              
+               &_main{
+
+                font-size: var.$font-sm;
+              
+                height: 3.4rem;
+               }
+
+              &_icon {
+
+                svg{
+                  width: 1.2rem;
+                height: 1.2rem;
+                }
+                
+              }
+                
+             
+            }
+
+          } 
+    
 }

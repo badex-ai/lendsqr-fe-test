@@ -1,4 +1,5 @@
 @use '../styles/variables' as var;
+@import '../styles/mixins';
 
 .userDetails{
     width: 103.7rem;
@@ -42,5 +43,17 @@
             font-weight: var.$font-medium;
             color: var.$primary-blue
         }
+    }
+
+     @include desktop-down {
+       
+
+        
+    }
+
+    @include mobile-down{
+        width: 100%;
+        box-sizing: border-box;
+        
     }
 }

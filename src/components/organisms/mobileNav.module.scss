@@ -1,0 +1,166 @@
+// mobileNav.module.scss
+
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 28rem;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  overflow-y: auto;
+  transition: left 0.3s ease-out;
+
+  
+  
+  &.open {
+    left: 0;
+  }
+
+  // Close button
+  .closeButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #213f7d;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 100;
+    
+  }
+
+  .sidebar_tenet {
+    display: flex;
+    align-items: center;
+    padding: 20px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    gap: 10px;
+    margin-top: 40px; 
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    span {
+      flex: 1;
+      font-size: 14px;
+      color: #213f7d;
+      font-weight: 500;
+    }
+  }
+
+  .sidebar {
+    padding: 0;
+    
+    // Categories
+    .sidebar_categories {
+      color: #545f7d;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 20px 16px 10px;
+      margin-top: 16px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      
+      li {
+        margin: 0;
+        padding: 0;
+        
+        a {
+          display: block;
+          padding: 12px 16px 12px 40px;
+          color: #213f7d;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 400;
+          transition: all 0.2s ease;
+          border-left: 3px solid transparent;
+          
+          &:hover {
+            background-color: #f5f5f5;
+            color: #39cdcc;
+            border-left-color: #39cdcc;
+          }
+          
+          &.active {
+            background-color: #39cdcc1a;
+            color: #39cdcc;
+            border-left-color: #39cdcc;
+          }
+        }
+      }
+    }
+
+    .docsSection {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      padding: 0 16px;
+      
+      a {
+        display: block;
+        padding: 12px;
+        background-color: #f8f9fb;
+        color: #213f7d;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background-color: #39cdcc;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+
+.mobileNavOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .mobileNav {
+    width: 100vw;
+    max-width: 320px;
+    transition: width 0.3s ease, transform 0.3s ease;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileNav {
+    width: 100vw;
+     transition: width 0.3s ease, transform 0.3s ease;
+  }
+}

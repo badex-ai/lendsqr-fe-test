@@ -1,4 +1,5 @@
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
 
 .userDetailsHeader{
     width: calc(100% - 6rem);
@@ -105,7 +106,7 @@
                     }
 
             &_head{
-                        font-size: var.$font-md3;
+                        font-size: var.$font-md2;
                         font-weight: var.$font-medium;
                         
                     }
@@ -116,6 +117,47 @@
 
 
 
+    }
+
+         @include desktop-down {
+       
+
+        
+    }
+
+    @include mobile-down{
+        &_nav{
+           
+            li{
+                padding: .9rem 1.6rem ;
+                
+            }
+        }
+        &_top{
+            width: calc(100%);
+            >svg{
+                &:first-of-type{
+                    width: 8rem;
+                height: 8rem;
+                }
+                
+            }
+            &_details{
+            height: 5rem;
+
+            &_tier{
+                &_icon{
+                    svg{
+                        width: 1.4rem;
+                        height: 1.4rem;
+                    }
+                }
+            }
+        }
+
+
+        }
+        
     }
 
 }

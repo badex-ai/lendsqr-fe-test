@@ -1,5 +1,5 @@
 @use '../../styles/variables' as var;
-
+@import '../../styles/mixins';
 .date {
   &_label {
     font-size: var.$font-sm;
@@ -40,16 +40,9 @@
       color: var.$primary-grey;
 
       
-//         input[type="date"]::-webkit-datetime-edit,
-// input[type="date"]::-webkit-datetime-edit-fields-wrapper,
-// input[type="date"]::-webkit-datetime-edit-text,
-// input[type="date"]::-webkit-datetime-edit-month-field,
-// input[type="date"]::-webkit-datetime-edit-day-field,
-// input[type="date"]::-webkit-datetime-edit-year-field {
-//   display: none;
-// }
+
       
-      // Custom styling for date input
+     
       &::-webkit-calendar-picker-indicator {
         opacity: 0;
         width: 18rem;
@@ -86,4 +79,22 @@
       z-index: 1;
     }
   }
+
+   @include mobile-down{
+      
+      &_input {
+           &_icon {
+            svg{
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+           }
+            &_main {
+              font-size: var.$font-xs;
+              height: 3.4rem;
+            }
+      }
+
+           
+    }
 }

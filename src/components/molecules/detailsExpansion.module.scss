@@ -1,5 +1,7 @@
+@import '../../styles/mixins';
 .expandDetails{
     position: relative;
+   
 
 
     &_content{
@@ -7,5 +9,19 @@
         z-index: 2;
         right: -8.0rem;
         top: 9.1rem;
+    }
+
+     @include desktop-down {
+         &_content{
+       
+        right: 0rem;
+       
+    }
+        
+    }
+
+    @include mobile-down{
+        
+        
     }
 }

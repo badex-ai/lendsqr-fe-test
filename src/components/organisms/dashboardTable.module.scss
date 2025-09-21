@@ -85,7 +85,11 @@
     }
 
     @include mobile-down{
+      table {
+        width: 100%;
+        box-sizing: border-box;
        
+      }
 
         
     }

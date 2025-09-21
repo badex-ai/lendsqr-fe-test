@@ -1,4 +1,5 @@
 @use '../../styles/variables' as var;
+@import '../../styles/mixins';
 
 .header{
     background-color: #fff;
@@ -54,6 +55,62 @@
     &_logo{
         width: 14.8rem;
         height: 3rem;
+        
+    }
+
+    &_ham{
+       display: none;
+        
+    }
+
+
+    @include desktop-down {
+        
+        
+    }
+
+    @include mobile-down{
+
+      &_ham{
+       display: block;
+        
+    }
+      &_expand{
+       
+        display: none;
+        
+      }
+      &_userInfo{
+        width: 4rem;
+       
+
+        div{
+          &:first-of-type{
+             width: 4rem;
+          }
+        }
+        &_link{
+          display: none;
+        }
+
+        &_expand{
+          display: none;
+        }
+        &_image{
+          display: none
+        }
+
+        &_notif{
+          margin-left:0;
+          margin-right: 0;
+          width: 3rem;
+        }
+      }
+
+      &_logo{
+        display: none;
+        
+      }
         
     }
 

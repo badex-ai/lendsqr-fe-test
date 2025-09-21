@@ -15,8 +15,8 @@ function SearchBar() {
       <input title='me' placeholder='Search for anything'></input>
     </form>
     
-    <button className={styles.searchbar_button}>
-      <SearchIcon/>
+    <button type='button' title='search' className={styles.searchbar_button}>
+      <SearchIcon/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
     </button>
     
    </div>

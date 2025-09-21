@@ -2,7 +2,9 @@
 @import '../styles/mixins';
 
 .usersPage{
-   
+    h1{
+        color: var.$primary-blue
+    }
     &_title{
         margin-bottom: 4rem;
         text-align: left
@@ -32,16 +34,37 @@
         width: 86rem;
         &_cardsCont{
         
-            width: 86rem;
+            width: 100%;
         
         }
         &_table{
-            width: calc(86rem - 6rem);
+            width: 100%;
             overflow-x: scroll;
+
         
         
         }   
     }
 
-    @include mobile-down{}
+    @include mobile-down{
+        width: 100%;
+        &_cardsCont{
+        
+           width: 100%;
+           
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            margin-bottom: 2rem;
+        
+
+        
+        }
+        &_table{
+            width: 100%;
+            overflow-x: scroll;
+            box-sizing: border-box;
+        
+        
+        }  
+    }
 }

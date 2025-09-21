@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "./sideNavBar.module.scss"
 import SideBarLink from '../atoms/SideBarLink'
 import {NavLinkType,NavLinkArray} from '../../types'
-import { BriefCase2Icon,Briefcase1Icon,NextIcon,UserFriendsIcon,Users2Icon, CoinsSolidIcon ,GalaxyIcon, CashHandIcon,TransactionIcon,SlidersIcon,BankIcon,ChartIcon,ClipboardIcon,BadgePercentIcon,ScrollIcon,UserCogIcon,UserTimesIcon, UserCheckIcon,HandshakeIcon, PiggyBankIcon, SackIcon} from '../../assets/icons'
+import { BriefCase2Icon,Briefcase1Icon,NextIcon,UserFriendsIcon,Users2Icon, CoinsSolidIcon ,GalaxyIcon, CashHandIcon,TransactionIcon,SlidersIcon,BankIcon,ChartIcon,ClipboardIcon,BadgePercentIcon,ScrollIcon,UserCogIcon,UserTimesIcon, UserCheckIcon,HandshakeIcon, PiggyBankIcon, SackIcon,} from '../../assets/icons'
 
 // type sideBarProps = {
 //     link: string
@@ -41,6 +41,7 @@ const Sidebar = () => {
   { name: "Preferences", link: "preferences", icon: SlidersIcon },
   { name: "Fees and Pricing", link: "fees-and-pricing", icon: BadgePercentIcon },
   { name: "Audit Logs", link: "audit-logs", icon: ClipboardIcon },
+   { name: "Systems Messages", link: "systems-messages", icon: ClipboardIcon },
 ];
 
    const customerTabLinks = customersLinks.map((obj:NavLinkType)=>{

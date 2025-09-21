@@ -1,5 +1,5 @@
 @use '../../styles/variables' as var;
-
+@import '../../styles/mixins';
 .searchbar {
     width: calc(40rem );
     height: 4rem;
@@ -7,6 +7,12 @@
     border-radius: .8rem;
     display: flex;
     overflow: hidden;
+
+    form{
+        height: 100%;
+        box-sizing: border-box;
+        width: 100%;
+    }
 
     &_button{
         width: 5.6rem;
@@ -22,7 +28,7 @@
     }
 
     input{
-        width: calc(40rem - 9.8rem) ;
+        width: calc(100% - 5.6rem) ;
         height: calc(3.7rem - 2.4rem);
         // border-radius:0.8rem 0 0 0.8rem;
         font-size: var.$font-sm ;
@@ -37,5 +43,26 @@
         }
 
     }
+    @include mobile-down{
+        width: calc(45rem );
+        height: 5.6rem;
+
+
+        &_button{
+        width: 5.6rem;
+        height: 100%;
+        
+        
+
+        }
+
+        input{
+            height: 100% ;
+            font-size: var.$font-md ;
+            box-sizing: border-box;
+             
+            
+        }
     
+    }
 }
