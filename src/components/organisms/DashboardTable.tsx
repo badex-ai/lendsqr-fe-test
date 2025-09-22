@@ -6,6 +6,8 @@ import { FilterIcon,VertMoreIcon}   from '../../assets/icons';
 import OrgFilter from './OrgFilter';
 import UserDetails from '../molecules/UserDetails';
 import DetailsExpansion from '../molecules/DetailsExpansion';
+import { useClickOutside } from '../../hooks/useClickOutside';
+
 
 
 
@@ -16,16 +18,15 @@ interface UserTableProps {
 }
 const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
   const [openFilter, setOpenFilter] = useState(false)
-   const [openDetails, setOpenDetails] = useState(false)
-
-   function handleOpenDetails() {
-    
-    setOpenDetails(true)
-   }
+ 
 
    function handleOpenFilter(){
     setOpenFilter(true)
    }
+
+    const filterRef = useClickOutside<HTMLDivElement>(() => {
+    setOpenFilter(false)
+  })
 
 
 
@@ -67,7 +68,7 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
           </tr>
         </thead>
           {tableBody}
-          {openFilter && <div className={styles.dashboardTable_orgFilter}>
+          {openFilter && <div ref={filterRef} className={styles.dashboardTable_orgFilter}>
             <OrgFilter />
           </div>}
           
