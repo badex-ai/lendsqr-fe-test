@@ -14,21 +14,32 @@ type Props = {
     pagesLength: number
     // onClickBtn: (position: PositionType) => void///
     onPageClick: (pageNumber: string) => void
+    // customersLength: number
 }
 
 const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
 
     
         const currentPageNum = Number(currentPage); 
+        console.log(currentPageNum)
 
 
         const pagesInit = [...Array(3)].map((_, index) => {
-            const pageNumber = currentPageNum - 1 + index; 
+            const pageNumber = currentPageNum - 1 + index; // Calculate pageNumber first
             
-            return pageNumber > 0 && (
-                <button type='button'
+            // Check if this would be the second-to-last page
+            // if (pagesLength - 3 === pageNumber) {
+            //     return null; // or return undefined
+            // }
+            
+            // Only render if pageNumber is valid (> 0)
+            return pageNumber > 0 ? (
+                <button 
+                    type='button'
                     key={`start-${pageNumber}`} 
-                    onClick={() => onPageClick?.(pageNumber.toString())} 
+                    onClick={() => {
+                                onPageClick?.(pageNumber.toString());
+                            }} 
                     className={
                         currentPageNum === pageNumber 
                             ? `${styles.bottomNav_nav_page} ${styles.bottomNav_nav_current}`
@@ -37,8 +48,8 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
                 >
                     {pageNumber}
                 </button>
-            );
-        }).filter(Boolean)
+            ) : null;
+        }).filter(Boolean);
 
 
         const pagesEnd = [...Array(2)].map((_, index) => {
@@ -46,16 +57,35 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
            
             return (
                 <button 
+                    type='button'
                     key={`end-${pageNumber}`} // Unique keys to avoid conflicts
                     onClick={() => onPageClick?.(pageNumber.toString())} 
-                     className={currentPage ? styles.bottomNav_nav_page : `${styles.bottomNav_nav_page} ${styles.bottomNav_nav_current}`}
+                     className={currentPageNum !== pageNumber ? styles.bottomNav_nav_page : `${styles.bottomNav_nav_page} ${styles.bottomNav_nav_current}`}
                 >
                     {pageNumber}
                 </button>
             )
         });
+
+        const pageTotal = [...Array(5)].map((_, index) => {
+            const pageNumber = pagesLength - 4 + index; 
+           
+            return (
+                <button 
+                    type='button'
+                    key={`total-${pageNumber}`} // Unique keys to avoid conflicts
+                    onClick={() => onPageClick?.(pageNumber.toString())} 
+                    className={currentPageNum !== pageNumber ? styles.bottomNav_nav_page : `${styles.bottomNav_nav_page} ${styles.bottomNav_nav_current}`}
+                >
+                    {pageNumber}
+                </button>
+            )
+        });
+
+
+
     const ellipsis = <span key={'ellipsis'}>...</span>
-    const pages = pagesInit.concat(ellipsis, pagesEnd);
+    const pages =Number(currentPage) >= pagesLength - 3 ? pageTotal : pagesInit.concat(ellipsis, pagesEnd);
 
     function handlePrevClicked() {
         if (Number(currentPage) === 1) {
