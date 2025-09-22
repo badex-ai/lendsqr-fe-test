@@ -20,7 +20,12 @@
       color: var.$primary-blue;
       margin-top: 7.1rem;
       
-
+      div{
+        &:first-of-type{
+            display: flex;
+            align-items: center;
+        }
+      }
       span{
         margin-left: 1rem
       }

@@ -58,11 +58,17 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
     const pages = pagesInit.concat(ellipsis, pagesEnd);
 
     function handlePrevClicked() {
+        if (Number(currentPage) === 1) {
+             return 
+        }
         const prevPage = Number(currentPage) - 1
         onPageClick(prevPage.toString())
     }
 
     function handleNextClicked() {
+         if (Number(currentPage) === pagesLength) {
+             return 
+        }
         const nextPage = Number(currentPage) + 1
         onPageClick(nextPage.toString())
     }
