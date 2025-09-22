@@ -15,7 +15,7 @@ const UserDetailsHeader = ({userInfo}: Props) => {
 const isMobile = useIsMobile();
 
 let navItems
-if(isMobile){
+if(isMobile.Tiny || isMobile.Big){
   navItems  =[
   { label: "General", to: "general" },
   { label: "Documents", to: "documents" },

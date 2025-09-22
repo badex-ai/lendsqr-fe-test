@@ -2,13 +2,9 @@ import React from 'react'
 import styles from "./sideNavBar.module.scss"
 import SideBarLink from '../atoms/SideBarLink'
 import {NavLinkType,NavLinkArray} from '../../types'
-import { BriefCase2Icon,Briefcase1Icon,NextIcon,UserFriendsIcon,Users2Icon, CoinsSolidIcon ,GalaxyIcon, CashHandIcon,TransactionIcon,SlidersIcon,BankIcon,ChartIcon,ClipboardIcon,BadgePercentIcon,ScrollIcon,UserCogIcon,UserTimesIcon, UserCheckIcon,HandshakeIcon, PiggyBankIcon, SackIcon,} from '../../assets/icons'
+import { BriefCase2Icon,Briefcase1Icon,NextIcon,UserFriendsIcon,Users2Icon, CoinsSolidIcon ,GalaxyIcon, CashHandIcon,TransactionIcon,SlidersIcon,BankIcon,ChartIcon,ClipboardIcon,BadgePercentIcon,ScrollIcon,UserCogIcon,UserTimesIcon, UserCheckIcon,HandshakeIcon, PiggyBankIcon, SackIcon,LogoutIcon} from '../../assets/icons'
 
-// type sideBarProps = {
-//     link: string
-//     name: string
-//     icon: any
-// }
+
 
 
 const Sidebar = () => {
@@ -25,7 +21,7 @@ const Sidebar = () => {
   { name: "Whitelist", link: "whitelist", icon: UserCheckIcon},
   { name: "Karma", link: "karma", icon: UserTimesIcon },
 ];
-   const servicesLinks :NavLinkArray=  [
+   const settingsLinks :NavLinkArray=  [
   { name: "Organization", link: "organization", icon: Briefcase1Icon },
   { name: "Loan Products", link: "loan-product", icon: CashHandIcon },
   { name: "Savings Products", link: "savings-products", icon: BankIcon },
@@ -52,12 +48,14 @@ const Sidebar = () => {
     return <SideBarLink key={`sidebar${obj.name}`} name ={obj.name} link={obj.link} icon={obj.icon} />
    })
 
-    const servicesTabLinks = servicesLinks.map((obj:NavLinkType)=>{
+    const settingsTabLinks = settingsLinks.map((obj:NavLinkType)=>{
     return <SideBarLink key={`sidebar${obj.name}`} name ={obj.name} link={obj.link} icon={obj.icon} />
    })
   return (
+
     
-      <nav className={styles.sidebar}>
+
+       <nav className={styles.sidebar}>
 
       <div className={styles.sidebar_tenet  } >
         <BriefCase2Icon/>
@@ -70,7 +68,7 @@ const Sidebar = () => {
       
       <div>
       <div className={styles.sidebar_categories} >
-        customers
+        CUSTOMERS
       </div>
       <div>
         {customerTabLinks}
@@ -80,7 +78,7 @@ const Sidebar = () => {
 
       <div>
       <div className={styles.sidebar_categories}>
-        Businesses
+        SETTINGS
       </div>
       <div>
         {businessesTabLinks}
@@ -90,16 +88,27 @@ const Sidebar = () => {
 
        <div>
       <div className={styles.sidebar_categories}>
-        Services
+        BUSINESSES
       </div>
       <div>
-        {servicesTabLinks}
+        {settingsTabLinks}
       </div>
 
       </div>
-     
+      <div className={styles.sidebar_logout}>
+            <div><LogoutIcon/><span>Logout</span></div>
+            
+            <div>
+              v1.2.0
+            </div>
+            
+          </div>
+    
 
     </nav>
+   
+    
+     
     
   )
 }

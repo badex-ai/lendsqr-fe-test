@@ -59,11 +59,11 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
         <thead>
           <tr>
             <th>Organisation <span className={styles.dashboardTable_icon}><FilterIcon onClick={handleOpenFilter}/></span></th>
-            <th>Username <span><FilterIcon/></span></th>
-            <th>Email <span><FilterIcon/></span></th>
-            <th>Phone Number <span><FilterIcon/></span></th>
-            <th>Date Joined <span><FilterIcon/></span></th>
-            <th>Status <span><FilterIcon/></span></th>
+            <th>Username <span className={styles.dashboardTable_icon}><FilterIcon/></span></th>
+            <th>Email <span className={styles.dashboardTable_icon}><FilterIcon/></span></th>
+            <th>Phone Number <span className={styles.dashboardTable_icon}><FilterIcon/></span></th>
+            <th>Date Joined <span className={styles.dashboardTable_icon}><FilterIcon/></span></th>
+            <th>Status <span className={styles.dashboardTable_icon}><FilterIcon/></span></th>
           </tr>
         </thead>
           {tableBody}

@@ -7,6 +7,7 @@ import styles from './userDetails.module.scss'
 import { Link } from 'react-router-dom'
 import { UserInfoType } from '../types'
 import {getCutomerDetails} from '../api'
+import UseIsMobile from '../hooks/IsMobile'
 
 type Props = {}
 
@@ -54,13 +55,22 @@ const UserDetails = (props: Props) => {
     }
   ]
 }
+  const isMobile = UseIsMobile()
 
   useEffect(() => {
     
     setcustomerDetails(getCutomerDetails)
   }, [])
   
+  let link 
 
+
+
+  if(isMobile.Tiny || isMobile.Big){
+    link = <Link to={'/dashboard/users'}> <BackArrowIcon/></Link>
+  }else{
+    link =<><BackArrowIcon/> <Link to={'/dashboard/users'}>Back to Users</Link></> 
+  }
 
 
   function handleBtnClick(){
@@ -69,7 +79,7 @@ const UserDetails = (props: Props) => {
   return (
     <div className={styles.userDetails}>
        <div className={styles.userDetails_backNav}>
-      <BackArrowIcon/> <Link to={'/dashboard/users'}>Back to Users</Link>
+      {link}
       </div>
 
       <div className={styles.userDetails_top}>

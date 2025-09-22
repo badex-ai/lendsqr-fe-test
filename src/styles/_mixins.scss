@@ -23,3 +23,10 @@
     @content;
   }
 }
+
+@mixin tiny-down {
+  @media screen and (max-width: #{v.$tiny - 1px}) {
+    @content;
+  }
+}
+

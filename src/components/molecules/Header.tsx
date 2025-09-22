@@ -63,13 +63,9 @@ const Header = (props: Props) => {
      
   
     </div>
-    <MobileNav 
-        isOpen={isMobileNavOpen} 
-        onClose={handleCloseMobileNav} 
-      />
-
-
+    <MobileNav isOpen={isMobileNavOpen} onClose={handleCloseMobileNav} />
     </div>
+
   )
 }
 

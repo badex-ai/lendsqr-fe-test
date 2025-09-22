@@ -85,9 +85,21 @@
     }
 
     @include mobile-down{
+
+      &_icon {
+      
+       
+            width: 1.5rem;
+            height: 1.5rem;
+          
+        
+      }
+      
       table {
         width: 100%;
         box-sizing: border-box;
+
+        
        
       }
 

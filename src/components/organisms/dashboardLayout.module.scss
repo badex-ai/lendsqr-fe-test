@@ -14,10 +14,11 @@
         &_nav{
        
         width: 29.9rem;
-        height: 148.4rem;
+        height: 100vh;
         position: -webkit-sticky;
         position: sticky;
         top: 0;
+        overflow-y: scroll;
         align-self: flex-start;
         }
 
