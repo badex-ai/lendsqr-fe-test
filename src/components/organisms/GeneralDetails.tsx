@@ -2,7 +2,7 @@ import React from 'react'
 import GridA from './GridA'
 import { UserInfoType } from '../../types'
 import styles from './generalDetails.module.scss'
-import useIsMobile from '../../hooks/IsMobile'
+import {useIsMobile} from '../../hooks/IsMobile'
 type Props = {}
 
 const GeneralDetails = (props: Props) => {

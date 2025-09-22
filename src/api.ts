@@ -39,7 +39,7 @@ export const staticCustomersData : CustomerType[]  = [
     "status": "Pending"
   },
   {
-    "id": "53781863-5d6d-48a6-a012-e65527091881",
+    "id": "LSQFf587g90",
     "organisation": "Lendsqr",
     "username": "Grace Effiom",
     "email": "grace@lendsqr.com",
@@ -1629,7 +1629,7 @@ export const staticCustomersData : CustomerType[]  = [
 const staticUser : User = {id:'gkhohygpaikjgag', name:"Adedeji", image: userImage }
 
    const singleCustomerInfoStatic : UserInfoType = {
-  id: "53781863-5d6d-48a6-a012-e65527091881",
+  id: "LSQFf587g90",
   personalInformation: {
     fullName: "Grace Effiom",
     phoneNumber: "07060780922",

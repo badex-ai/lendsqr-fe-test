@@ -33,7 +33,7 @@ const Header = (props: Props) => {
    
   return (
     <div className={styles.header}>
-    <button className={styles.header_ham} title='hanburgerIcon' type='button' onClick={handleOpenMobileNav} >
+    <button className={styles.header_ham} title='hamburgerIcon' type='button' onClick={handleOpenMobileNav} >
       <HamburgerMenu/>
     </button>
       

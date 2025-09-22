@@ -138,6 +138,7 @@
         }
         &_top{
             width: calc(100%);
+            max-width: 50rem;
             >svg{
                 &:first-of-type{
                     width: 8rem;

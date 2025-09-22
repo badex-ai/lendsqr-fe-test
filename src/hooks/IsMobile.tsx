@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const UseIsMobile = (mobileBreakpoint = 768, tinyBreakpoint = 400) => {
+export const useIsMobile = (mobileBreakpoint = 768, tinyBreakpoint = 400) => {
   const [breakpoints, setBreakpoints] = useState({
     Big: false,
     Tiny: false
@@ -26,4 +26,25 @@ const UseIsMobile = (mobileBreakpoint = 768, tinyBreakpoint = 400) => {
   return breakpoints;
 };
 
-export default UseIsMobile;
+export const useIsTablet = (tableBreakpoint = 1120, mobileBreakpoint = 768) => {
+  const [breakpoints, setBreakpoints] = useState(false);
+
+  useEffect(() => {
+    const checkBreakpoints = () => {
+      const width = window.innerWidth;
+      setBreakpoints(
+        width > mobileBreakpoint && width <= tableBreakpoint 
+      );
+    };
+
+    checkBreakpoints();
+    window.addEventListener('resize', checkBreakpoints);
+
+    return () => {
+      window.removeEventListener('resize', checkBreakpoints);
+    };
+  }, [tableBreakpoint, mobileBreakpoint]);
+
+  return breakpoints;
+};
+

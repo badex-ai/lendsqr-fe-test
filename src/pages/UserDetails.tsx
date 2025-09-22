@@ -7,14 +7,14 @@ import styles from './userDetails.module.scss'
 import { Link } from 'react-router-dom'
 import { UserInfoType,CustomerType } from '../types'
 import {getSingleCutomerDetails,staticCustomersData,} from '../api'
-import UseIsMobile from '../hooks/IsMobile'
+import {useIsMobile} from '../hooks/IsMobile'
 
 
 type Props = {}
 
 const UserDetails = (props: Props) => {
   const [customerDetails, setcustomerDetails] = useState<UserInfoType | null>(null)
-  const isMobile = UseIsMobile()
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     setcustomerDetails(getSingleCutomerDetails)

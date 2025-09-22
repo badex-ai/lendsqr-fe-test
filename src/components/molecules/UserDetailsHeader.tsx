@@ -4,7 +4,7 @@ import { NavLink,Link } from 'react-router-dom'
 import styles from './userDetailsHeader.module.scss'
 import {StarIcon} from '../../assets/icons/index'
 import { UserInfoType } from '../../types'
-import useIsMobile from '../../hooks/IsMobile';
+import {useIsMobile,useIsTablet} from '../../hooks/IsMobile';
 
 
 type Props = {
@@ -13,9 +13,10 @@ type Props = {
 
 const UserDetailsHeader = ({userInfo}: Props) => {
 const isMobile = useIsMobile();
+const isTablet = useIsTablet()
 
 let navItems
-if(isMobile.Tiny || isMobile.Big){
+if(isMobile.Tiny || isMobile.Big || isTablet){
   navItems  =[
   { label: "General", to: "general" },
   { label: "Documents", to: "documents" },
