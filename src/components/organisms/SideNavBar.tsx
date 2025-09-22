@@ -98,7 +98,7 @@ const Sidebar = () => {
       <div className={styles.sidebar_logout}>
             <div><LogoutIcon/><span>Logout</span></div>
             
-            <div>
+            <div className={styles.sidebar_version}>
               v1.2.0
             </div>
             

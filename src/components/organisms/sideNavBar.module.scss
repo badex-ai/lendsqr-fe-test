@@ -26,6 +26,12 @@
       }
     }
 
+         
+   
+    &_version{
+
+    }
+
     &_title{
         font-size: var.$font-md;
         color: var.$primary-blue;
@@ -62,6 +68,14 @@
         &_categories{
             display: none;
         }
+        &_logout{
+            span{
+                display: none;
+            }
+        }
+        &_version{
+            display: none;
+    }
 
         &_tenet{
             width: 3rem;
