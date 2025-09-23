@@ -97,7 +97,7 @@ function handlePageChange(page:string) {
   setCurrentPage(start)
   // setCustomers()
 }
-
+const empty = <div className={styles.usersPage_empty}>No data</div>
 
   return (
     <div className={styles.usersPage}>
@@ -105,10 +105,10 @@ function handlePageChange(page:string) {
       <div className={styles.usersPage_cardsCont} >
        {infoCards}
       </div >
-      <div className={styles.usersPage_table}>
-        <DashboardTable onFilterSub={onFilterOrgFormSubmit} data={displayedCustomers}/>
+      <div className={styles.usersPage_table}> 
+           {displayedCustomers.length === 0 ? empty : <DashboardTable onFilterSub={onFilterOrgFormSubmit} data={displayedCustomers}/>}
       </div>
-      <BottomNavigation currentPage={currentPage} onPageClick={handlePageChange} pagesLength={pages}/>
+      {displayedCustomers.length === 0 ? null : <BottomNavigation currentPage={currentPage} onPageClick={handlePageChange} pagesLength={pages}/>}
       
 
     </div>
