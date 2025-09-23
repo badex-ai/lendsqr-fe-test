@@ -42,6 +42,7 @@ import StarIcon from "./StarIcon";
 import  HamburgerMenu from "./HambugerMenu"
 import { ReactComponent as Settings} from "./settings.svg"
 import { ReactComponent as LogoutIcon} from "./signOutIcon.svg"
+import { ReactComponent as ReloadIcon} from "./reloadIcon.svg"
 
 
 export {
@@ -87,7 +88,8 @@ export {
   EyeIcon,
   HamburgerMenu,
   Settings,
-  LogoutIcon
+  LogoutIcon,
+  ReloadIcon
 
  
   

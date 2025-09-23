@@ -1,7 +1,7 @@
 import React ,{useState,useEffect} from 'react'
 import InfoCard from '../components/molecules/InfoCard'
 import DashboardTable from '../components/organisms/DashboardTable'
-import { UsersIcon , ActiveUsersIcon,CoinIcon, CoinSheet} from '../assets/icons' 
+import { UsersIcon , ActiveUsersIcon,CoinIcon, CoinSheet,ReloadIcon} from '../assets/icons' 
 import { CustomerType,FilterOrgFormData } from '../types'
 import styles from './usersPage.module.scss'
 import BottomNavigation from '../components/organisms/BottomNavigation'
@@ -13,7 +13,7 @@ const Users :React.FC = (props: Props) => {
   
   const [currentPage, setCurrentPage] = useState('1')
   const [customers, setCustomers] = useState<CustomerType[]>(staticCustomersData)
-  const [displayedCustomers, setDisplayedCustomers] = useState<CustomerType[] | []>([])
+  const [displayedCustomers, setDisplayedCustomers] = useState<CustomerType[] | null>(null)
   const [clonedCustomers, setClonedCustomers] = useState<CustomerType[] | []>([])
 
     //****This should be an async call to the API using a useEffect hook****
@@ -97,18 +97,32 @@ function handlePageChange(page:string) {
   setCurrentPage(start)
   // setCustomers()
 }
+
+function reloadData() {
+  const result = getCustomers()
+  setCustomers(result)
+}
 const empty = <div className={styles.usersPage_empty}>No data</div>
 
   return (
+
     <div className={styles.usersPage}>
-      <h1>Users</h1>
+      {displayedCustomers ? 
+      <>
+       <h1>Users</h1>
       <div className={styles.usersPage_cardsCont} >
        {infoCards}
       </div >
       <div className={styles.usersPage_table}> 
            {displayedCustomers.length === 0 ? empty : <DashboardTable onFilterSub={onFilterOrgFormSubmit} data={displayedCustomers}/>}
+            {displayedCustomers.length === 0 ? <button onClick={reloadData}   title='reload' className={styles.usersPage_table_reload}><ReloadIcon/></button> : null}
       </div>
-      {displayedCustomers.length === 0 ? null : <BottomNavigation currentPage={currentPage} onPageClick={handlePageChange} pagesLength={pages}/>}
+      {displayedCustomers.length === 0 ? null : <BottomNavigation currentPage={currentPage} onPageClick={handlePageChange} pagesLength={pages}/>}</>
+      : <div> “Something went wrong while fetching data. Please reload the page.”</div>
+      
+    }
+
+      
       
 
     </div>
