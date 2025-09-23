@@ -23,7 +23,7 @@
         background-color: var.$primary-white;
         border: 1px solid var.$primary-blue-border;
         box-shadow: var.$box-shadow1  ;
-        height: calc(78.2rem - 6rem);
+        min-height: calc(78.2rem - 6rem);
     }
 
       &_pageNav{

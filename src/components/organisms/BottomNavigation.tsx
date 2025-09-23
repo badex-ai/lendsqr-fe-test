@@ -21,6 +21,7 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
 
     
         const currentPageNum = Number(currentPage); 
+       
 
 
         const pagesInit = [...Array(3)].map((_, index) => {
@@ -69,7 +70,7 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
         const pageTotal = [...Array(5)].map((_, index) => {
             const pageNumber = pagesLength - 4 + index; 
            
-            return (
+            return pageNumber > 0?(
                 <button 
                     type='button'
                     key={`total-${pageNumber}`} // Unique keys to avoid conflicts
@@ -78,7 +79,7 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
                 >
                     {pageNumber}
                 </button>
-            )
+            ): null
         });
 
 
@@ -104,7 +105,9 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
 
     return (
         <div className={styles.bottomNav}>
-            <div className={styles.bottomNav_nav_pageInfo}>Showing  <span><SelectPage pageLength={pagesLength} handlePageSelected={onPageClick}/></span> out of {pagesLength}</div> 
+            <div className={styles.bottomNav_nav_pageInfo}>Showing  <span><SelectPage pageLength={pagesLength} handlePageSelected={onPageClick}/></span>
+             <span>out of {pagesLength}</span>
+             </div> 
             <div className={styles.bottomNav_nav}>
                 <ButtonSm 
                     onClick={handlePrevClicked} 

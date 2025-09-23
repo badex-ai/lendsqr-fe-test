@@ -6,6 +6,7 @@ import {
   LogoutIcon
 } from '../../assets/icons';
 import { Link } from 'react-router-dom';
+import { useLogout } from '../../utils';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -16,9 +17,13 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   const navRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
+
+
   useEffect(() => {
     const nav = navRef.current;
     const overlay = overlayRef.current;
+
+    
     
     if (!nav || !overlay) return;
 
@@ -38,6 +43,8 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
       overlay.style.visibility = 'hidden';
     }
   }, [isOpen]);
+
+   const logout = useLogout(); 
 
   const customersLinks = [
     { name: "Users", link: "/dashboard/users", icon: null },
@@ -175,7 +182,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <Link to="docs" onClick={onClose}>Docs</Link>
         </div>
         <div className={styles.logout}>
-          <div><LogoutIcon/><span>Logout</span></div>
+          <button type='button' title='logout' id='logout' onClick={logout}><LogoutIcon/><span>Logout</span></button>
           <div>v1.2.0</div>
         </div>
       </div>

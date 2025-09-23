@@ -3,6 +3,7 @@ import styles from "./sideNavBar.module.scss"
 import SideBarLink from '../atoms/SideBarLink'
 import {NavLinkType,NavLinkArray} from '../../types'
 import { BriefCase2Icon,Briefcase1Icon,NextIcon,UserFriendsIcon,Users2Icon, CoinsSolidIcon ,GalaxyIcon, CashHandIcon,TransactionIcon,SlidersIcon,BankIcon,ChartIcon,ClipboardIcon,BadgePercentIcon,ScrollIcon,UserCogIcon,UserTimesIcon, UserCheckIcon,HandshakeIcon, PiggyBankIcon, SackIcon,LogoutIcon} from '../../assets/icons'
+import { useLogout } from '../../utils'
 
 
 
@@ -10,7 +11,7 @@ import { BriefCase2Icon,Briefcase1Icon,NextIcon,UserFriendsIcon,Users2Icon, Coin
 const Sidebar = () => {
 
   
-
+    const logout = useLogout()
     const customersLinks :NavLinkArray = [
   { name: "Users", link: "/dashboard/users", icon: UserFriendsIcon },
   { name: "Guarantors", link: "guarantors", icon: Users2Icon },
@@ -96,9 +97,12 @@ const Sidebar = () => {
 
       </div>
       <div className={styles.sidebar_logout}>
-            <div><LogoutIcon/><span>Logout</span></div>
+            <div>
+              <button onClick={logout}><LogoutIcon/><span>Logout</span></button>
+            </div>
             
-            <div className={styles.sidebar_version}>
+            
+            <div className={styles.sidebar_logout_version}>
               v1.2.0
             </div>
             

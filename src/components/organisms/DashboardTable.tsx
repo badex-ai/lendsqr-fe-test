@@ -1,13 +1,11 @@
 import React,{useState} from 'react'
 import styles from './dashboardTable.module.scss'
-import { StatusEnum,CustomerType } from '../../types';
+import { CustomerType } from '../../types';
 import Badge from '../atoms/Badge';
-import { FilterIcon,VertMoreIcon}   from '../../assets/icons';
+import { FilterIcon}   from '../../assets/icons';
 import OrgFilter from './OrgFilter';
-import UserDetails from '../molecules/UserDetails';
 import DetailsExpansion from '../molecules/DetailsExpansion';
 import { useClickOutside } from '../../hooks/useClickOutside';
-import {filterData } from '../../api'
 import { FilterOrgFormData } from '../../types';
 
 
@@ -17,10 +15,11 @@ import { FilterOrgFormData } from '../../types';
 
 interface UserTableProps {
   data: CustomerType[];
+  onFilterSub: (data:FilterOrgFormData )=> void;
 }
-const DashboardTable: React.FC<UserTableProps> = ({ data }) => {
+const DashboardTable: React.FC<UserTableProps> = ({ data,onFilterSub }) => {
   const [openFilter, setOpenFilter] = useState(false)
-  const [customers, setcustomers] = useState(data)
+  // const [customers, setcustomers] = useState(data)/
  
 
    function handleOpenFilter(){
@@ -32,21 +31,11 @@ const DashboardTable: React.FC<UserTableProps> = ({ data }) => {
   })
 
 
-   async function onFilterOrgFormSubmit(data: FilterOrgFormData) { 
-    
-    //****Tis sould be an async await call to te api*****
-      await new Promise((resolve) => setTimeout(()=>{
-              const result = filterData(data)
-              console.log(result)
-              setcustomers(result)
-              resolve(true); 
-            }, 1000));
-      
-  }
+ 
 
 
   const tableBody =  <tbody>
-          {customers.map((user) => (
+          {data.map((user) => (
             <tr key={user.id}>
               <td>{user.organisation}</td>
               <td>{user.username}</td>
@@ -88,7 +77,7 @@ const DashboardTable: React.FC<UserTableProps> = ({ data }) => {
           
       </table>
        {openFilter && <div ref={filterRef} className={styles.dashboardTable_orgFilter}>
-            <OrgFilter onFilter={onFilterOrgFormSubmit}/>
+            <OrgFilter onFilter={onFilterSub}/>
           </div>}
      
     </div>

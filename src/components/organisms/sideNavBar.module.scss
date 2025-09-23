@@ -74,16 +74,20 @@
             display: none;
         }
         &_logout{
+            border-top: none;
+            &_version{
+                display: none;
+            }
             span{
                 display: none;
             }
+            
         }
-        &_version{
-            display: none;
-        }
+        
 
         &_tenet{
             width: 3rem;
+            margin-left: 2.2rem;
             >span{
                 display: none;
             }
