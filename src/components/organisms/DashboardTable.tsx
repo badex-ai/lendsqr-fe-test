@@ -7,6 +7,8 @@ import OrgFilter from './OrgFilter';
 import UserDetails from '../molecules/UserDetails';
 import DetailsExpansion from '../molecules/DetailsExpansion';
 import { useClickOutside } from '../../hooks/useClickOutside';
+import {filterData } from '../../api'
+import { FilterOrgFormData } from '../../types';
 
 
 
@@ -14,10 +16,11 @@ import { useClickOutside } from '../../hooks/useClickOutside';
 
 
 interface UserTableProps {
-  customers: CustomerType[];
+  data: CustomerType[];
 }
-const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
+const DashboardTable: React.FC<UserTableProps> = ({ data }) => {
   const [openFilter, setOpenFilter] = useState(false)
+  const [customers, setcustomers] = useState(data)
  
 
    function handleOpenFilter(){
@@ -28,6 +31,18 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
     setOpenFilter(false)
   })
 
+
+   async function onFilterOrgFormSubmit(data: FilterOrgFormData) { 
+    
+    //****Tis sould be an async await call to te api*****
+      await new Promise((resolve) => setTimeout(()=>{
+              const result = filterData(data)
+              console.log(result)
+              setcustomers(result)
+              resolve(true); 
+            }, 1000));
+      
+  }
 
 
   const tableBody =  <tbody>
@@ -68,13 +83,13 @@ const DashboardTable: React.FC<UserTableProps> = ({ customers }) => {
           </tr>
         </thead>
           {tableBody}
-          {openFilter && <div ref={filterRef} className={styles.dashboardTable_orgFilter}>
-            <OrgFilter />
-          </div>}
+         
           
           
       </table>
-
+       {openFilter && <div ref={filterRef} className={styles.dashboardTable_orgFilter}>
+            <OrgFilter onFilter={onFilterOrgFormSubmit}/>
+          </div>}
      
     </div>
   )
