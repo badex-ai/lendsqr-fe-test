@@ -54,8 +54,7 @@ const GeneralDetails = (props: Props) => {
   const info1: ('personalInformation' | 'educationAndEmployment')[] = ['personalInformation', 'educationAndEmployment'];
 
  let gridNum = isMobile.Big || isMobile.Tiny? [4,3] :[5,4]
-  console.log(gridNum[1],'this is index 1')
-  console.log(gridNum[0], 'this is index 2')
+
 
   let  components1 = info1.map((key) => {
     return (

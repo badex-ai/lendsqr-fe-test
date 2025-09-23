@@ -1,5 +1,6 @@
 import {UserInfoType,User, CustomerType,LoginFormData} from './types'
 import userImage from './assets/images/avatar.jpg'
+import {FilterOrgFormData} from './types'
 
 export const staticCustomersData : CustomerType[]  = [
   {
@@ -1628,7 +1629,7 @@ export const staticCustomersData : CustomerType[]  = [
 
 const staticUser : User = {id:'gkhohygpaikjgag', name:"Adedeji", image: userImage }
 
-   const singleCustomerInfoStatic : UserInfoType = {
+   const singleCustomerInfoStatic : UserInfoType[] =[ {
   id: "LSQFf587g90",
   personalInformation: {
     fullName: "Grace Effiom",
@@ -1668,7 +1669,7 @@ const staticUser : User = {id:'gkhohygpaikjgag', name:"Adedeji", image: userImag
       relationship: "Sister"
     }
   ]
-}
+}]
 
 
 
@@ -1686,7 +1687,18 @@ export function getCustomers (){
 
 }
 
-export function getSingleCutomerDetails(){
+type CustomerIdType = string
 
-  return singleCustomerInfoStatic
+export function getSingleCutomerDetails(customerId:CustomerIdType){
+
+  const result =  singleCustomerInfoStatic.filter((customer) =>{
+    return customer.id === customerId
+})
+  return   result[0]
+}
+
+export function filterData(data: FilterOrgFormData):CustomerType[] {
+  return staticCustomersData.filter((customer)=>{
+    return  data.userEmail === customer.email || data.organizationSelect === customer.organisation || data.date === customer.date_joined || data.phoneNumber === customer.phone_number || data.status === customer.status || data.username === customer.username
+  })
 }

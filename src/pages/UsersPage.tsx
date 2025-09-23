@@ -14,8 +14,11 @@ const Users :React.FC = (props: Props) => {
   const [currentPage, setCurrentPage] = useState('1')
   const [customers, setCustomers] = useState<CustomerType[]>(staticCustomersData)
 
+    //****This should be an async call to the API using a useEffect hook****
   // useEffect(() => {
-  //  getCustomers()
+  // const result = getCustomers()
+  // setCustomers(result)
+  //fetc data for users wit loans savins and te number of active users
   // }, [])
   
 
@@ -55,7 +58,7 @@ function handlePageChange(page:string) {
        {infoCards}
       </div >
       <div className={styles.usersPage_table}>
-        <DashboardTable customers={displayedCustomers}/>
+        <DashboardTable data={displayedCustomers}/>
       </div>
       <BottomNavigation currentPage={currentPage} onPageClick={handlePageChange} pagesLength={pages}/>
       

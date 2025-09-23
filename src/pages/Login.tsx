@@ -57,7 +57,7 @@ const Login = (props: Props) => {
         <div>
         <h1>Welcome!</h1>
         <h2>Enter details to login.</h2>
-        <form>
+        <form id='loginForm'>
            <Input 
         id='email' 
         type='email'
@@ -76,7 +76,7 @@ const Login = (props: Props) => {
       />  
 
       <Link to='#' className={styles.login_forgot}>forgot password</Link>
-      <ButtonBg  loading={isSubmitting} text='LOG IN' vars='solid' onClickBtn={handleSubmit(handleLogin)}/>
+      <ButtonBg  type='submit'  loading={isSubmitting} text='LOG IN' vars='solid' onClickBtn={handleSubmit(handleLogin)}/>
         </form>
       </div>
         </div>

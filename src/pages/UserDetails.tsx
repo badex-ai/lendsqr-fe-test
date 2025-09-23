@@ -17,7 +17,8 @@ const UserDetails = (props: Props) => {
   const isMobile = useIsMobile()
 
   useEffect(() => {
-    setcustomerDetails(getSingleCutomerDetails)
+    const result = getSingleCutomerDetails("LSQFf587g90")
+    setcustomerDetails(result)
   }, [])
   
   const link = isMobile.Tiny || isMobile.Big ? (
