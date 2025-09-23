@@ -21,7 +21,6 @@ const BottomNavigation = ({ currentPage, pagesLength, onPageClick }: Props) => {
 
     
         const currentPageNum = Number(currentPage); 
-        console.log(currentPageNum)
 
 
         const pagesInit = [...Array(3)].map((_, index) => {
