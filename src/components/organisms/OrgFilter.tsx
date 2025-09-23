@@ -8,18 +8,21 @@ import Input from '../atoms/Input';
 import ButtonMd from '../atoms/ButtonMd';
 import DateInput from '../atoms/DateInput';
 
-type Props = {}
 
-const OrgFilter = (props: Props) => {
+type Props = {
+  onFilter:  (data: FilterOrgFormData)=> void
+}
+
+const OrgFilter = ({onFilter}: Props) => {
     const {
         register,
         handleSubmit,
-        reset, // 👈 comes from useForm
+        reset, 
         formState: { errors, isSubmitting }, 
     } = useForm<FilterOrgFormData>({
         resolver: zodResolver(filterOrgFormSchema),
     
-            mode: 'onChange', // Validates on change for better UX
+            mode: 'onChange', 
             defaultValues: {
             organizationSelect: '',
             username: '',
@@ -31,95 +34,92 @@ const OrgFilter = (props: Props) => {
             }
         });
 
-
-  function onFilterOrgFormSubmit(data: FilterOrgFormData) { 
-    
-  }
-
   function handleResetClick() { 
     reset()
     return 
   }
+
+ 
   return (
    <div className={styles.orgFilter}>
-    <form className={styles.orgFilter_form}> 
-        {/* Organization Select */}
-         <SelectInputSm 
-        id='status'  
-        options={[
-          {value:'Org1', label: 'Org1'},
-          {value:'Org1', label: 'Org2'},
-          {value:'Org3', label: 'Org3'}
-        ]} 
-        label='Status'
-        register={register}
-        error={errors.status}
-      />
+      <form onSubmit={handleSubmit(onFilter)}   id='filterForm' className={styles.orgFilter_form}> 
+          {/* Organization Select */}
+          <SelectInputSm 
+          id="organizationSelect" 
+          options={[
+            {value:'Org1', label: 'Org1'},
+            {value:'Org2', label: 'Org2'},
+            {value:'Org3', label: 'Org3'}
+          ]} 
+          label='Organization'
+          register={register}
+          error={errors.status}
+        />
+          
+        {/* username */}
+        <Input 
+          id='username' 
+          placeholder='User' 
+          label='Username' 
+          register={register}
+          error={errors.username}
+          /> 
+
+          {/* email */}
+        <Input 
+          id='userEmail' 
+          type='email'
+          placeholder='Email' 
+          label='Email' 
+          register={register}
+          error={errors.userEmail}
+        /> 
+          
         
-      {/* username */}
-      <Input 
-        id='username' 
-        placeholder='User' 
-        label='Username' 
-        register={register}
-        error={errors.username}
+          {/* Date */}
+          <DateInput 
+          id='date' 
+          label='Date' 
+          register={register}
+          error={errors.date}
         /> 
 
-        {/* email */}
-      <Input 
-        id='userEmail' 
-        type='email'
-        placeholder='Email' 
-        label='Email' 
-        register={register}
-        error={errors.userEmail}
-      /> 
+          {/* Phone Number */}
         
-      
-        {/* Date */}
-        <DateInput 
-        id='date' 
-        label='Date' 
-        register={register}
-        error={errors.date}
-      /> 
+          
+            <Input 
+          id='phoneNumber' 
+          type='tel'
+          placeholder='Phone Number' 
+          label='Phone Number' 
+          register={register}
+          error={errors.phoneNumber}
+        /> 
+          
+          
 
-        {/* Phone Number */}
-      
-        
-          <Input 
-        id='phoneNumber' 
-        type='tel'
-        placeholder='Phone Number' 
-        label='Phone Number' 
-        register={register}
-        error={errors.phoneNumber}
-      /> 
-        
-        
-
-        {/* Status Select */}
-        <div>
-       <SelectInputSm 
-        id='status'  
-        options={[
-          {value:'Active', label: 'Active'},
-          {value:'Inactive', label: 'Inactive'},
-          {value:'Pending', label: 'Pending'},
-          {value:'Blacklisted', label: 'Blacklisted'}
-        ]} 
-        label='Status'
-        register={register}
-        error={errors.status}
-      />
-        </div>
-        <div className={styles.orgFilter_btns}>
-                <ButtonMd text='Reset' vars='ghost' onClickBtn={handleResetClick} />
-                <ButtonMd text='Filter' vars='solid' onClickBtn={handleSubmit(onFilterOrgFormSubmit)} /> 
-        </div>
+          {/* Status Select */}
+          <div>
+        <SelectInputSm 
+          id='status'  
+          options={[
+            {value:'Active', label: 'Active'},
+            {value:'Inactive', label: 'Inactive'},
+            {value:'Pending', label: 'Pending'},
+            {value:'Blacklisted', label: 'Blacklisted'}
+          ]} 
+          label='Status'
+          register={register}
+          error={errors.status}
+        />
+          </div>
+          <div className={styles.orgFilter_btns}>
+                  <ButtonMd text='Reset' vars='ghost' onClickBtn={handleResetClick} />
+                  <ButtonMd type='submit' text='Filter' loading={isSubmitting} vars='solid'/> 
+          </div>
     
-  </form>
-</div>
+      </form>
+    </div>
 
   )
 }

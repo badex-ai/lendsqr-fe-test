@@ -33,21 +33,50 @@ type NavLinkArray  = NavLinkType[]
 
 
 export const filterOrgFormSchema = z.object({
-  organizationSelect: z.string().trim().min(1, 'Organization is required'),
+  organizationSelect: z.string().optional(),
+  
   username: z.string()
-    .trim()
-    .min(3, 'Username must be at least 3 characters')
-    .max(50, 'Username must not exceed 50 characters')
-    .regex(/^[a-zA-Z0-9_]+$/, 'Username can only contain letters, numbers, and underscores'),
-  userEmail: z.email('Invalid email address')
-    .trim()
-    .min(1, 'Email is required'),
-  date: z.string().min(1, 'Date is required'),
+    .optional()
+    .refine((val) => !val || val.length >= 3, {
+      message: 'Username must be at least 3 characters'
+    })
+    .refine((val) => !val || val.length <= 50, {
+      message: 'Username must not exceed 50 characters'
+    })
+    .refine((val) => !val || /^[a-zA-Z]+$/.test(val), {
+      message: 'Username can only contain letters'
+    }),
+    
+  userEmail: z.string()
+    .optional()
+    .refine((val) => !val || z.string().email().safeParse(val).success, {
+      message: 'Invalid email address'
+    }),
+    
+  date: z.string().optional(),
+  
   phoneNumber: z.string()
-    .trim()
-    .min(10, 'Phone number must be at least 10 digits')
-    .regex(/^[+]?[1-9][\d]{0,15}$/, 'Invalid phone number format'),
-  status: z.string().min(1, 'Status is required')
+    .optional()
+    .refine((val) => !val || val.length >= 11, {
+      message: 'Phone number must be at least 11 digits'
+    })
+    .refine((val) => !val || /^[+]?[1-9][\d]{0,15}$/.test(val), {
+      message: 'Invalid phone number format'
+    }),
+    
+  status: z.string().optional()
+})
+.refine((data) => {
+  // Check if at least one field has a meaningful value
+  return Object.values(data).some(value => 
+    value !== undefined && 
+    value !== null && 
+    value !== '' && 
+    String(value).trim() !== ''
+  );
+}, {
+  message: "Please provide at least one filter criteria",
+  path: [] // This shows the error at the form level, not on a specific field
 });
 
 export const loginFormSchema = z.object({
@@ -63,11 +92,17 @@ export const loginFormSchema = z.object({
     )
 });
 
+type FilterOrgFormData = z.infer<typeof filterOrgFormSchema>;
+type LoginFormData = z.infer<typeof loginFormSchema>;
+
+// type dataType = FilterOrgFormData | LoginFormData
 interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
   vars: 'solid' | 'ghost';
   text: string;
-  onClickBtn: ()=> void
+  onClickBtn?: ()=> void
 }
+
+
 
 type UserInfoType = {
   id: string; 
@@ -117,6 +152,5 @@ type Guarantor = UserInfoType["guarantor"]
 
 
 
-type FilterOrgFormData = z.infer<typeof filterOrgFormSchema>;
-type LoginFormData = z.infer<typeof loginFormSchema>;
+
 export type {User, UserContextType, NavLinkType,NavLinkArray, SvgIconComponent, StatusEnum,CustomerType,FilterOrgFormData,LoginFormData,ButtonProps,UserInfoType, PersonalInformationType, AccountInformationType, EducationAndEmploymentType, SocialsType,Guarantor}

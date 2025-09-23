@@ -2,8 +2,12 @@ import React from 'react'
 import styles from './buttonMd.module.scss'
 import { ButtonProps } from '../../types'
 
+interface ButtonMdProps extends ButtonProps {
+  loading?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+};
 
-const ButtonMd: React.FC<ButtonProps> = ({ vars, text,onClickBtn, ...props }) => {
+const ButtonMd: React.FC<ButtonMdProps> = ({ vars, text,onClickBtn,type='button', loading=false,...props  }) => {
 
 function getWrapperClass() {
   return vars === "solid" ? styles.mdBtn_solid : styles.mdBtn_ghost;
@@ -11,8 +15,8 @@ function getWrapperClass() {
 
   return (
 
-    <button type='button' onClick={onClickBtn} className={`${styles.mdBtn} ${getWrapperClass()}`}>
-      {text}
+    <button type={type} onClick={onClickBtn} className={`${styles.mdBtn} ${getWrapperClass()}`}>
+      {loading ? "...loading" : `${text}`}
     </button>
   )
 }

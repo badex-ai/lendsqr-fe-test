@@ -4,8 +4,9 @@ import { ButtonProps } from '../../types';
 
 interface ButtonBgProps extends ButtonProps {
   loading?: boolean;
+   type?: 'button' | 'submit' | 'reset';
 };
-const ButtonBg: React.FC<ButtonBgProps> = ({ vars, text,onClickBtn,loading=false , ...props }) => {
+const ButtonBg: React.FC<ButtonBgProps> = ({ vars,type, text='button',onClickBtn,loading=false , ...props }) => {
 
 function getWrapperClass() {
   return vars === "solid" ? styles.bgBtn_solid : styles.bgBtn_ghost;
@@ -13,8 +14,8 @@ function getWrapperClass() {
 
   return (
 
-    <button type='button' onClick={onClickBtn} className={`${styles.bgBtn} ${getWrapperClass()}`}>
-      {loading ? "...submitting" : `${text}`}
+    <button title='btnBg' type={type} onClick={onClickBtn} className={`${styles.bgBtn} ${getWrapperClass()}`}>
+      {loading ? "...loading" : `${text}`}
       
     </button>
   )
